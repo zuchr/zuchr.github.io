@@ -1,0 +1,79 @@
+#gallery, #middle {
+	width: 800px;
+	max-width: 95%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /*Looks better than space-around*/
+	flex-shrink: 1;
+}
+
+#gallery > img {
+	height: 150px;
+	background-color: #231f20;
+	border-radius: 25px;
+	padding: 10px;
+	margin: 5px;
+	transition: background-color .5s, height .25s;
+}
+
+#gallery > img:hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+#leftwall, #rightwall {
+	background-color: #231F20;
+	background-clip: content-box;
+	height: 100%;
+	width: 10%;
+	min-width: 3%;
+	position: relative;
+	top: 0;
+	z-index: -1;
+	flex-shrink: 3;
+}
+
+#leftwall {	border-right: 50px double #231F20; left: 0; transition: border-right .25s; }
+
+#rightwall { border-left: 50px double #231F20; right: 0; transition: border-left .25s; }
+
+#flexcontent {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	position: absolute;
+	width: 100%;
+	margin-top: 30px;
+	z-index: -1;
+}
+
+#flexbg {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: -2;
+}
+
+#flexcontent > #leftwall, #flexcontent > #rightwall {
+	opacity: 0;
+	position: relative;
+}
+
+#iframeA {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	border: none;
+}
+
+#iframeouter {
+	display: none;
+	width: 100vmin;
+	max-width: 580px;
+	max-height: 580px;
+}
+
+#getridofme2 { text-align: center; }

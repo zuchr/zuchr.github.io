@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Friday Night Voltex - Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+
+	.rotate {
+		-webkit-animation: rotation 8s infinite linear;
+		animation: rotation 8s infinite linear;
+	}
+
+	@keyframes rotation {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(359deg); }
+	}
+	
+	#complex1 {
+		-webkit-animation: floaty 3.5s infinite alternate ease-in-out;
+		animation: floaty 3.5s infinite alternate ease-in-out;
+		max-height: 300px;
+		margin: 10px 0px;
+	}
+
+	@-webkit-keyframes floaty {
+		from { transform: translateY(10px); }
+		to { transform: translateY(-10px); }
+	}
+
+	@-webkit-keyframes widen1 {
+		from { align-self: stretch; }
+		to { align-self: center; }
+	}
+
+	@-webkit-keyframes widen2 {
+		from { align-self: center; }
+		to { align-self: stretch; }
+	}
+
+	@keyframes floaty {
+		from { transform: translateY(10px); }
+		to { transform: translateY(-10px); }
+	}
+
+	@keyframes widen1 {
+		from { align-self: stretch; }
+		to { align-self: center; }
+	}
+
+	@keyframes widen2 {
+		from { align-self: center; }
+		to { align-self: stretch; }
+	}
+	
+	#complex1 > img {
+		max-width: 100%;
+		display: block;
+		float: left;
+		transform-origin: 64.7% 37.4%;
+	}
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+	
+	#bitext { height: 29px; margin: 5px 0px 15px; }
+
+</style>
+</head>
+<body>
+
+<div id="corecontent">
+
+<div id="topbanner" style="background-image: url(https://cdn.discordapp.com/attachments/925652686265798736/936045412291317820/Made_In_Love.png);">
+<!--<h1 style="font-size: 28pt; text-align: center;">Friday Night Voltex: Heavenly Haven</h1>
+<hr>-->
+<img id="titleimg" src="https://cdn.discordapp.com/attachments/901206407695728660/963156143788654632/unknown.png" alt="Friday Night Voltex: Heavenly Haven" title="Yes, I made this logo too!">
+<p id="topdesc">The world of Sound Voltex comes to the hit indie rhythm game, Friday Night Funkin' (FNF)! For this project, I had to draw and animate a bunch of characters, backgrounds, and UI to all match the visual style of an early internet flash game. After studying the methods of FNF's lead artist, I pulled out Adobe Animate and my trusty drawing tablet, and ended up with my first foray into 'snap-to' animation, in the form of a mod for a game!<br><br> <a name="sprites"></a>
+Over the course of this project, I've worked with several talented visionaries and coders to bring this mod to life. A <a href="https://youtu.be/uT6XP_3iyTM" target="_blank">great video demonstration of the game can be found here</a>, for the first release. The game can also be <a href="https://gamebanana.com/mods/345560" target="_blank">downloaded and played for free here!</a> There are countless videos on it, and our mod has become very popular!<br><br>Sound Voltex and all characters are ©KONAMI.</p>
+</div>
+
+<div class="featuredsection"><br>
+<h1>In-game Sprites</h1><br>
+<p>Each pose is for when they sing one of the 4 directional notes. I packed as much emotion into these poses as I could!</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="talldisplay">
+		<h2 id="bitext">
+		Bi  び
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962774316016078868/Bi_FULL.gif">
+		</div>
+		<p>This bee girl sporadically sings at the player. Too hyper to touch the ground!</p>
+	</div>
+	
+	<div class="talldisplay">
+		<h2>
+		Rasis
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962797699202166804/Rasis_FULL.gif">
+		</div>
+		<p>A gentle idol that loves to sing. The first human character that I animated for this.</p>
+	</div>
+	
+	<div class="talldisplay">
+		<h2>
+		Tamaneko
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962797718907002930/TamaNeko_FULL.gif">
+		</div>
+		<p>The cat-ball mascot of Sound Voltex. The first opponent to challenge the player.</p>
+	</div>
+	
+	<div class="talldisplay">
+		<h2>
+		Tamaneko Dark
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962879599371505724/TamaNeko_Dark_FULL.gif">
+		</div>
+		<p>Palette-swap of Tamaneko, with darker colors and a more angular mouth.</p>
+	</div>
+	
+	<div class="talldisplay">
+		<h2>
+		Background Tama+Rasis
+		</h2>
+		<div class="imageside">
+			<div id="complex1">
+				<img src="https://cdn.discordapp.com/attachments/901206407695728660/962858866666799104/dualtama_glow.png" class="rotate">
+				<img src="https://cdn.discordapp.com/attachments/901206407695728660/962858866436096030/dualrasis_glow.png" style="position: absolute;">
+			</div>
+		</div>
+		<p>Two stacked images of Rasis and Tamaneko float in the background.</p>
+	</div>
+	
+</div>
+
+<div class="featuredsection"><br>
+<h1>Dialogue Sprites</h1><br>
+<p>Quick, budgeted animated portraits that I cranked out in a day.</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Rasis: Shock
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962959114974150666/dialogue_rasis2.gif">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Rasis: Talk
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962957886034673725/dialogue_rasis1.gif">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Rasis: Ready
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962957886487687228/dialogue_rasis3.gif">
+		</div>
+	</div>
+	
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Tamaneko: Shock
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962964935627915274/dialogue_tama2.gif">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Tamaneko: Talk
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962964935397232660/dialogue_tama1.gif">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Tamaneko: Ready
+		</h2><a name="backgrounds"></a>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/962965096219435038/dialogue_tama3.gif">
+		</div>
+	</div>
+	
+</div>
+
+<div class="featuredsection"><br>
+<h1>Backgrounds</h1><br>
+<p>The stages that the player is taken to when facing the different opponents. The platform at the bottom is based on the controller for the Sound Voltex arcade cabinet.</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Honeycomb
+		</h2>
+		<div class="imageside">
+			<img src="https://media.discordapp.net/attachments/925652686265798736/933177278848974878/unknown.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Overhang: Blue
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/936045412291317820/Made_In_Love.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Overhang: Pink
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/936046399508852736/I.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Overhang: Violet
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/936048010381635694/Fin4l.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Overhang: Green
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/936046790912913478/Sayo.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Space Overhang: Rainbow
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/936044333482782720/BG_back_finale.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Tamaneko Pencil Sketch
+		</h2> <a name="icons"></a>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/909688746197270558/917916297566761030/unknown.png">
+		</div>
+	</div>
+	
+</div>
+
+<div class="featuredsection"><br>
+<h1>Icons</h1><br>
+<p><!--Made to credit each member of the development team. Also includes -->The app icon and context-based character icons for the game. Did I mention I made the logo at the top?</p>
+</div>
+
+<div class="displayflexer shrunken75">
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		App Icon
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/909688746197270558/911120111367245854/FNVHH_Circle1.png">
+		</div>
+	</div>
+<!--	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Koneko
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/909688746197270558/923417587373707334/creditsicon_koneko.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: K.M.D.
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/963236535459803136/creditsicon_KMD.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Dmillion
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/909688746197270558/923405860078768138/creditsicon_dmill.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Me
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/963236535212322896/creditsicon_yoshi.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Bruhba
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/909688746197270558/923392712227581952/creditsicon_bruhba.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Lazor
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/963236535644340254/creditsicon_lazor.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Sad-istic
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/935703694840827994/creditsicon_sad.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Polarin
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/935703694618542130/creditsicon_polarin.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Tenku
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/935323223464218706/935710734472577044/creditsicon_tenku.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Naikaze
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/935323223464218706/935703756350296094/creditsicon_naikazae.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: FullCombro
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/933186932941393970/creditsicon_combro.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Credits Icon: Wixx
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/935712278291030086/wixxgun.png">
+		</div>
+	</div>
+-->		
+	<div class="talldisplay nodescription">
+		<h2>
+		Character Icons: Tamaneko 
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/932500457547513947/icon-pico.png">
+		</div>
+	</div>
+
+	<div class="talldisplay nodescription">
+		<h2>
+		Character Icons: Dark Tama 
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/932500457757233172/icon-spooky.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Character Icons: Player 
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/932500456897380352/icon-bf.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Character Icons: Rasis 
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/935675329295581184/icon-mom.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Character Icons: Bi 
+		</h2> <a name="fonts"></a>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/925652686265798736/935675329039720549/icon-bi.png">
+		</div>
+	</div>
+	
+</div>
+
+<div class="featuredsection"><br>
+<h1>Font Edits</h1><br>
+<p>I had to actually go in and edit two fonts to have the び symbol for one of the song names.</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		VCR OSD Mono
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/963248831292645526/bi_insertion_vcr.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay nodescription">
+		<h2>
+		Animated Sprite Font
+		</h2>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/963248831078752316/bi_insertion.png">
+		</div>
+	</div>
+</div>
+
+<div id="backhomebutton">
+	<div>
+	<a href=".."><p>Back to Main</p></a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & ABOUT PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+<div id="infobox">
+	<div class="half" id="sideB">
+		<div class="sectionlight">
+			<div id="imgdisplay"><img id="image"></div>
+			<p id="date"><img src="../clock.svg"></p>
+			<p id="client"></p>
+		</div>
+	</div>
+	<div class="half" id="sideA">
+		<div class="section">
+			<p id="title"></p>
+			<h2>Bobby Zuch!</h2>
+			<div id="connection"></div>
+		</div>
+		<div class="section" id="unified"><br>
+			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="skills"></p><br>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="hback"><img src="../corner_anchors_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
+	<div id="anchortext">
+	<a href="#top"><h2>Top</h2></a>
+	<a href="#sprites"><h2>Sprites</h2></a>
+	<a href="#backgrounds"><h2>Backgrounds</h2></a>
+	<a href="#icons"><h2>Icons</h2></a>
+	<a href="#fonts"><h2>Fonts</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// create an Observer instance
+const resizeObserver = new ResizeObserver(entries => 
+  //console.log('Body height changed:', entries[0].target.clientHeight)
+  resizedocument()
+)
+
+// start observing a DOM node
+resizeObserver.observe(document.body)
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("imageside");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "bringforward(this.parentElement)");
+	imgdisplays[u].setAttribute("onmouseout", "bringback(this.parentElement)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.children)");
+}
+	
+function bringforward(parent) {
+	parent.style.zIndex = 1;
+}
+function bringback(parent) {
+	parent.removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true);
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+</script>
+</html>

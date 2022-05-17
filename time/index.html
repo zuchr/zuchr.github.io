@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The Factory Times - Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+
+	@-webkit-keyframes widen1 {
+		from { align-self: stretch; }
+		to { align-self: center; }
+	}
+
+	@-webkit-keyframes widen2 {
+		from { align-self: center; }
+		to { align-self: stretch; }
+	}
+
+	@keyframes widen1 {
+		from { align-self: stretch; }
+		to { align-self: center; }
+	}
+
+	@keyframes widen2 {
+		from { align-self: center; }
+		to { align-self: stretch; }
+	}
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+	
+	#titleimg { max-width: 500px; }
+	
+	#topbanner { background-blend-mode: unset; }
+
+</style>
+</head>
+<body>
+
+<div id="corecontent">
+
+<div id="topbanner" style="background-image: url(https://magazineproject.org/sandbox/webpageimage.png);">
+<!--<h1 style="font-size: 28pt; text-align: center;">Friday Night Voltex: Heavenly Haven</h1>
+<hr>-->
+<img id="titleimg" src="timelogo.png" alt="Faces in TIME" title="(Logo not official)">
+<p id="topdesc">Starting in the Fall semester of 2021, I begun helping one of my professors under a Graduate Assistantship position. The project revolved around analyzing the individual face photos within TIME Magazine. The data had already been collected by the time I was brought on, so now it was time to display the data visually.<br><br><a name="webpages"></a>
+While I was working on this, I was taking a course by the same professor to learn the ins and outs of web development. This means that as the semester went on, I gradually got better at what I was doing. It was actually this project that led to the development of this portfolio website as it is today!<br><br>The website is under construction, and as of right now, these links are temporary until the website launches publicly. For now, these links all come from my sandbox folder on the magazineproject.org domain.</p>
+</div>
+
+<div class="featuredsection"><br>
+<h1>Webpages</h1><br>
+<p>Here are the individual pages I've made for the Faces in TIME project. No templates used -- all coded by me.</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="widedisplay">
+		<div class="imagesidehoverless">
+			<a href="https://magazineproject.org/sandbox/" target="_blank">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118274962133022/unknown.png">
+			</a>
+		</div>
+		<div class="widetextside">
+			<h2>
+			<a href="https://magazineproject.org/sandbox/" target="_blank">Home Page</a>
+			</h2>
+			<p>The first page I made for the project. Not all links are functional yet, but the design is close to finalized.<br>Click the image or title to interact with the page.</p>
+		</div>
+	</div>
+	
+	<div class="widedisplay">
+		<div class="widetextside">
+			<h2>
+			<a href="https://magazineproject.org/sandbox/trendlines" target="_blank">Trendlines Page</a>
+			</h2>
+			<p>This page was tough to make. On top of having to work off of someone else's chart-creation code, I didn't fully understand the D3 Javascript library yet, so it was a struggle to get this to display as I intended. But with enough time, I made it there. The responsive checkbox layouts were also a huge undertaking for me at the time.<br>Click the image or title to interact with the page.</p>
+		</div>
+		<div class="imagesidehoverless">
+			<a href="https://magazineproject.org/sandbox/trendlines/" target="_blank">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118591833411615/unknown.png">
+			</a>
+		</div>
+	</div>
+	
+	<div class="widedisplay">
+		<div class="imagesidehoverless">
+			<a href="https://magazineproject.org/sandbox/Composite_Year/" target="_blank">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118747618259064/unknown.png">
+			</a>
+		</div>
+		<div class="widetextside">
+			<h2>
+			<a href="https://magazineproject.org/sandbox/Composite_Year/" target="_blank">Composite Yearly Faces Page</a>
+			</h2>
+			<p>Where the other pages took me weeks to make on and off, I was able to make this one in about a day. It was around this point where my Javascript skills really started to take form.<br>Click the image or title to interact with the page.</p>
+		</div>
+	</div>
+	
+	<div class="widedisplay">
+		<div class="widetextside">
+			<h2>
+			<a href="https://magazineproject.org/sandbox/historical_timeline/" target="_blank">Historical Timeline Page</a>
+			</h2>
+			<p>This page will display content from three different spreadsheets, and display them based on the period of time selected, and the types of events selected. For now, I filled some empty spreadsheets with different song lyrics. When I finally got everything to work with each other, I practically jumped for joy.<br><a name="code"></a>Click the image or title to interact with the page.</p>
+		</div>
+		<div class="imagesidehoverless">
+			<a href="https://magazineproject.org/sandbox/historical_timeline/" target="_blank">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118568131420261/unknown.png">
+			</a>
+		</div>
+	</div>
+	
+</div>
+
+<div class="featuredsection"><br>
+<h1>Code Samples</h1><br>
+<p>I figured I would put up some examples of the Javascript code I wrote here. I always do my best to annotate my code so that anyone (including myself after a few days) can understand it. Both of these actually come from the same function.</p>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="widedisplay">
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971173561182081054/unknown.png">
+		</div>
+		<div class="widetextside">
+			<h2>
+			Code Example 1
+			</h2>
+			<p>This code is for the historical timeline page. It looks at the user's input for the sliders, and creates the container that will house the information that gets loaded in later. I originally wrote this to be able to account for a range of years, but ended up only using one year at a time. Because of that, the header mentioned near the bottom is hidden in the final product. The common phrase in my code, "(i + 1923)", looks at 'i', the current value, and adds the starting year, 1923, to it. I probably could've made that its own variable.
+		</div>
+	</div>
+	
+	<div class="widedisplay">
+		<div class="widetextside">
+			<h2>
+			Code Example 2
+			</h2>
+			<p>Continuing off of the previous code sample, this is where the information itself gets loaded into the containers set up prior. It loads each spreadsheet into a different set of data, which all get added to the screen depending on which filters are checked by the user. It does this for each selected month in the selected year, and skips any empty cells of information.
+		</div>
+		<div class="imageside">
+			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971137002059759736/unknown.png">
+		</div>
+	</div>
+	
+</div>
+
+<div id="backhomebutton">
+	<div>
+	<a href=".."><p>Back to Main</p></a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & ABOUT PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+<div id="infobox">
+	<div class="half" id="sideB">
+		<div class="sectionlight">
+			<div id="imgdisplay"><img id="image"></div>
+			<p id="date"><img src="../clock.svg"></p>
+			<p id="client"></p>
+		</div>
+	</div>
+	<div class="half" id="sideA">
+		<div class="section">
+			<p id="title"></p>
+			<h2>Bobby Zuch!</h2>
+			<div id="connection"></div>
+		</div>
+		<div class="section" id="unified"><br>
+			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="skills"></p><br>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="hback"><img src="../corner_anchors_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
+	<div id="anchortext">
+	<a href="#top"><h2>Top</h2></a>
+	<a href="#webpages"><h2>Webpages</h2></a>
+	<a href="#code"><h2>Code Samples</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// create an Observer instance
+const resizeObserver = new ResizeObserver(entries => 
+  //console.log('Body height changed:', entries[0].target.clientHeight)
+  resizedocument()
+)
+
+// start observing a DOM node
+resizeObserver.observe(document.body)
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("imageside");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "bringforward(this.parentElement)");
+	imgdisplays[u].setAttribute("onmouseout", "bringback(this.parentElement)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.children)");
+}
+	
+function bringforward(parent) {
+	parent.style.zIndex = 1;
+}
+function bringback(parent) {
+	parent.removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true);
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+</script>
+</html>
