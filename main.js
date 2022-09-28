@@ -130,7 +130,7 @@ function loadfromhash() { //Performs actions based around the number of the hash
 	document.getElementById("skills").innerHTML = "<b>Skills:</b> " + (data[currentrow].Skills);
 	document.getElementById("software").innerHTML = "<b>Software:</b> " + (data[currentrow].Software);
 	document.getElementById("client").innerHTML = (data[currentrow].Client);
-	document.getElementById("category").innerHTML = (data[currentrow].Category);
+	document.getElementById("category").innerHTML = (data[currentrow].Category).replace(/-/g, " ").replace(/\+/g, " & ");
 	if (data[currentrow].Type === "img") {
 		//console.log("imgtime");
 		document.getElementById("iframeouter").style.display = "none";
