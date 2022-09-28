@@ -55,6 +55,8 @@ iframe {
 	font-size: 18pt;
 }
 
+h1 { margin: 0; font-size: 24pt; }
+
 body { background-color: var(--raisin-black); }
 
 @media (max-width: 800px) {
@@ -81,12 +83,20 @@ body { background-color: var(--raisin-black); }
 	</span>
 	</div>
 	<div id="introtext" style="margin-top: 15px;">
-	<hr style="max-width: 95%; width: 800px;">
+	<hr style="max-width: 95%; width: 800px; margin-bottom: 40px;">
 		<h1>My Resume</h1>
-		<p></p>
+		<span id="outercontactblock">
+		<span class="contactblock">
+			<img src="../contact_pdf.png"><h1><a href="../BobbyZuch_Resume_22-8-23.pdf" target="_blank">PDF Version Here</a></h1>
+		</span>
+		</span>
+		<p>PNG version below:</p>
 	</div>
-	<div id="gallery">
-		<iframe src="../BobbyZuch_Resume_22-8-23.pdf" width="100%" height="1055px" style="max-width: 95%"></iframe>
+	<div id="gallery" style="width: unset; max-width: 90%;">
+		<div style="display: flex; justify-content: center; width: 100%;">
+			<img src="../BobbyZuch_Resume_22-8-23.png" width="100%" style="max-width: 1879px;">
+			<!--iframe src="../BobbyZuch_Resume_22-8-23.pdf" width="100%" height="1055px" style="max-width: 95%"></iframe-->
+		</div>
 	</div>
 </div>
 
