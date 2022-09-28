@@ -1,0 +1,64 @@
+<html>
+<head>
+<style>
+.rotate {
+  animation: rotation 18s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(359deg) translateZ(0);
+  }
+}
+
+#a, #c {
+	position: absolute;
+	top: 5%;
+	left: 0.75%;
+	height: 92%;
+	max-height: 800px;
+	transform: translateZ(0px);
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#holder {
+	position: relative;
+	max-height: 55vw;
+	height: 100%;
+	margin: 0;
+	width: fit-content;
+}
+
+.rotate {
+	position: absolute;
+	height: 18%;
+	top: 0.3%;
+	left: 0.95%;
+}
+
+#bg {
+	height: 100%;
+	max-height: 800px;
+}
+
+</style>
+</head>
+<body>
+	<div id="holder">
+	<img src="https://static.wixstatic.com/media/f39f1b_e7f08570655a4c33b957172f7e1c7710~mv2.gif" id="bg">
+	<img src="FC_animC.png" id="c">
+	<img src="FC_animB.png" class="rotate">
+	<img src="FC_animA.png" id="a">
+	</div>
+</body>
+</html>

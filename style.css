@@ -6,11 +6,12 @@
 	flex-wrap: wrap;
 	justify-content: center; /*Looks better than space-around*/
 	flex-shrink: 1;
+	margin-bottom: 70px;
 }
 
 #gallery > img {
 	height: 150px;
-	background-color: #231f20;
+	background-color: var(--raisin-black);
 	border-radius: 25px;
 	padding: 10px;
 	margin: 5px;
@@ -23,7 +24,7 @@
 }
 
 #leftwall, #rightwall {
-	background-color: #231F20;
+	background-color: var(--raisin-black);
 	background-clip: content-box;
 	height: 100%;
 	width: 10%;
@@ -34,9 +35,9 @@
 	flex-shrink: 3;
 }
 
-#leftwall {	border-right: 50px double #231F20; left: 0; transition: border-right .25s; }
+#leftwall {	border-right: 50px double var(--raisin-black); left: 0; transition: border-right .25s; }
 
-#rightwall { border-left: 50px double #231F20; right: 0; transition: border-left .25s; }
+#rightwall { border-left: 50px double var(--raisin-black); right: 0; transition: border-left .25s; }
 
 #flexcontent {
 	display: flex;
@@ -74,6 +75,15 @@
 	width: 100vmin;
 	max-width: 580px;
 	max-height: 580px;
+	flex-direction: column-reverse;
+	height: 55vw;
+	min-height: 300px;
 }
 
-#getridofme2 { text-align: center; }
+#getridofme2 {
+	text-align: center;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	text-shadow: 2px 2px 5px var(--davys-gray);
+}

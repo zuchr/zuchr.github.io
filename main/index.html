@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+
+<meta property="og:title" content="Bobby Zuch!" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Welcome to my portfolio. Take a look inside!" />
+<meta property="og:url" content="https://zuchr.github.io/" />
+<meta property="og:image" content="https://zuchr.github.io/logo.png" />
+<meta name="theme-color" content="#1DCC6D" />
+<!-- Include this to make the og:image larger -->
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../style.css?v=1.2" type="text/css">
+<link rel="stylesheet" href="../universal.css?v=1.2" type="text/css">
+<script src="../main.js"></script>
+<script src="../java_half.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/science@1.9.3/science.v1.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	
+	#blanktop {
+		display: flex;
+		justify-content: flex-end;
+		background-color: var(--davys-gray);
+		width: 100%;
+		height: fit-content;
+		box-shadow: 0px 10px 10px var(--raisin-black);
+		flex-direction: column;
+		align-items: center;
+		padding-top: calc(var(--top-margin) - 50px);
+	}
+	
+	#filters, #toprow {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		max-width: 600px;
+	}
+	
+	.filter {
+		background-color: var(--emerald-green);
+		padding: 2px 5px;
+		border-radius: 25px;
+		cursor: pointer;
+		height: 20px;
+		color: var(--raisin-black);
+		font-family: 'RobotoCBI';
+		min-width: 30px;
+		text-align: center;
+	}
+	
+	.filter:hover { filter: brightness(1.1); }
+	.filter:active { filter: brightness(0.8); }
+	
+	#searchbar { 
+		border: unset;
+		margin: 0;
+		top: -1px;
+		left: 2px;
+		border-radius: 25px;
+		padding: 1px 0px 1px 7px;
+		position: relative;
+		height: 14px;
+		background-color: #0005;
+		color: white;
+		font-family: 'RobotoCBI';
+	}
+	
+	::placeholder { color: white; }
+	
+	#toprow {
+		width: 100%;
+		padding-bottom: 10px;
+		margin-bottom: 5px;
+		border-bottom: solid var(--raisin-black) 4px;
+	}
+
+</style>
+</head>
+<body onload="loaddata()", onhashchange="loadfromhash()">
+<div id="blanktop">
+<div class="featuredsection">
+<br><h1>Main Gallery</h1>
+<p style="margin-top: 7px;">Please use the filters below to find the content you're interested in seeing.</p><br>
+</div>
+
+<div id="filters">
+	<div id="toprow">
+		<div class="filter" id="All" onclick="filter(this)">All Content</div>
+		<div class="filter" id="Featured" onclick="filter(this)">Featured Works</div>
+		<div class="filter">
+			<input type="text" value="" id="searchbar" placeholder="Search for a phrase..." onchange="filter(this)">
+			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)">
+		</div>
+	</div>
+	<div class="filter" id="Graphics" onclick="filter(this)">Graphics</div>
+	<div class="filter" id="Web-Designs" onclick="filter(this)">Web Designs</div>
+	<div class="filter" id="Games+Demos" onclick="filter(this)">Games & Demos</div>
+	<div class="filter" id="Article-Designs" onclick="filter(this)">Article Designs</div>
+	<div class="filter" id="Pixel-Art" onclick="filter(this)">Pixel Art</div>
+	<div class="filter" id="2D-Animation" onclick="filter(this)">2D Animation</div>
+	<div class="filter" id="3D-Animation" onclick="filter(this)">3D Animation</div>
+	<div class="filter" id="Drawings" onclick="filter(this)">Drawings</div>
+	<div class="filter" id="Digital-Music" onclick="filter(this)">Digital Music</div>
+	<div class="filter" id="3D-Modeling+Texturing" onclick="filter(this)">3D Modeling & Texturing</div>
+</div>
+
+<br>
+</div>
+
+<!-- HEADER & ABOUT PORTION -->
+
+<div id="backborder">
+<div id="closeXholder">
+	<div class="closeX" id="leftbutton" onclick="nextprev(0)"><h1><</h1></div>
+	<div class="closeX" id="rightbutton" onclick="nextprev(1)"><h1>></h1></div>
+	<div class="closeX" id="closeX" onclick="closeit()" style="display: initial;"><h1>X</h1></div>
+</div>
+<div id="infobox">
+	<div class="half" id="sideB">
+		<div class="sectionlight">
+			<p id="extra">(Click the image to play it in a new window)</p>
+			<div id="imgdisplay"><img id="image">
+				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
+			</div>
+			<p id="date"><img src="../clock.svg"></p>
+			<p id="client"></p>
+		</div>
+	</div>
+	<div class="half" id="sideA">
+		<div class="section">
+			<p id="title"></p>
+			<h2 id="category">Bobby Zuch!</h2>
+			<div id="connection"></div>
+		</div>
+		<div class="section" id="unified"><br>
+			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="skills"></p><br>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="flexbg">
+	<div id="leftwall"></div>
+	<div id="middle"></div>
+	<div id="rightwall"></div>
+</div>
+<div id="flexcontent">
+	<div id="leftwall"></div>
+	<div id="gallery">
+		<h1 id="getridofme">Loading page content...</h1>
+		<noscript><h1 style="text-align: center">This page needs Javascript<br>enabled to function properly.</h1></noscript>
+	</div>
+	<div id="rightwall"></div>
+</div>
+
+
+<div id="header">
+	<div id="hback"><img src="../corner_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
+	</div>
+</div>
+	
+</body>
+
+<script>
+
+let frame = document.getElementById("iframeA");
+frame.onload = function() { document.getElementById("getridofme2").style.display = "none"; }
+
+let filters = document.getElementsByClassName("filter");
+let searchstring = location.hash.slice(location.hash.indexOf('?')).substring(1);
+// ^ This removes the hash before the '?' in the address bar. Slashes the '?'. I think???
+let itsasearch = 0;
+let anysearches = 0;
+if ( searchstring !== "" ) { anysearches = 1; } //IMPORTANT!!! ACTUALLY WORKS
+let found = 0; // Becomes 1 when the search matches a button.
+
+function filter(item) {
+	let searchquery;
+	for ( let i = 0; i < filters.length; i++ ) {
+		filters[i].style.backgroundColor = "";
+	}
+	
+	if ( item.innerHTML !== "" ) { //If it's one of the buttons.
+		searchquery = item.id;
+	}
+	else {
+		searchquery = item.value;
+		console.log(item.value);
+		if ( anysearches == 1 ) { item.parentElement.style.backgroundColor = "var(--pacific-blue)"; }
+	}
+	
+	//searchquery = item.id;
+	//item.style.backgroundColor = "var(--pacific-blue)";
+
+	anysearches = 1;
+	searchstring = searchquery;
+	getfromsearch();
+}
+
+function getfromsearch() {
+	if ( anysearches == 1 ) {
+		if ( location.hash = hashname + '?' + searchstring ) { location.hash = hashname + '?' + searchstring; }
+		// ^ Prevents an infinite loop.
+		
+		// Cache the search bar text without leaving it out in the open.
+		//let searchbartext = filters[2].children[0].value;
+		//let cachedsearchbartext = searchbartext;
+		
+		/* Fill the search bar with the content of the
+		search, unless it belongs to one of the buttons: */
+		//Search bar = filters[2].
+		found = 0;
+		//if ( filters[2].children[0].value === '' ) { //Blocking this clears searchbar.
+			for ( let i = 0; i < filters.length; i++ ) {
+				if ( filters[2].children[0].value === filters[i].id ) {
+					found = 1;
+					filters[2].children[0].value = '';
+					filters[i].style.backgroundColor = "var(--pacific-blue)";
+					//filters[2].children[0].value = cachedsearchbartext;
+					break;
+				}
+			if ( found == 0 )
+				{ filters[2].children[0].value = searchstring; }
+			}
+		//}
+	}
+}
+
+</script>
+</html>

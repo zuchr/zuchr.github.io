@@ -1,312 +1,494 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Bobby Zuch! 😎</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css" type="text/css">
-<link rel="stylesheet" href="universal.css" type="text/css">
-<script src="main.js"></script>
-<script src="java_half.js"></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://unpkg.com/science@1.9.3/science.v1.min.js"></script>
+<title>Bobby Zuch! 😎 - Landing Page</title>
+
+<meta property="og:title" content="Bobby Zuch!" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Welcome to my portfolio. Take a look inside!" />
+<meta property="og:url" content="https://zuchr.github.io/" />
+<meta property="og:image" content="https://zuchr.github.io/logo.png" />
+<meta name="theme-color" content="#1DCC6D" />
+<!-- Include this to make the og:image larger -->
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="universal.css?v=1.2" type="text/css">
 <style>
-	
-	#galleryprojects {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		flex-wrap: wrap;
-		margin: auto;
-		margin-top: 20px;
-		max-width: 1230px;
-		width: 100%;
-		z-index: 1;
-	}
-	
-	.bigbox {
-		background-color: var(--raisin-black);
-		width: 263px;
-		height: 332px;
-		color: var(--white);
-		font-family: Roboto;
-		border-radius: 25px 25px 25px 5px;
-		box-shadow: 0px 7px 7px 4px var(--raisin-black);
-		transition: box-shadow .25s, transform .25s;
-		margin: 10px 5px;
-		transform-origin: center;
-	}
-	
-	.bigbox:hover {
-		box-shadow: 0px 0px 0px 5px var(--emerald-green);
-		transform: scale(1.05);
-		cursor: pointer;	
-		z-index: 1;
-	}
-	
-	.singlerow {
-		font-size: 19pt;
-		text-align: center;
-		height: 38px; /*60px total with padding*/
-		margin: 0px;
-		padding: 8px 0px 0px;
-	}
-	
-	.doublerow {
-		font-size: 14pt;
-		text-align: center;
-		line-height: 14pt;
-		height: 40px; /*60px total with padding*/
-		margin: 0px;
-		padding: 5px 0px 2px;
-	}
-	
-	.tagsection {
-		position: relative;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-evenly;
-		height: 37px;
-	}
-	
-	.tag {
-		min-width: 24%;
-		text-align: center;
-		background-color: var(--orange-accent);
-		border-radius: 8px;
-		padding: 0px 2%;
-		color: darkred; /*Refine this*/
-		font-size: 9pt;
-	}
-	
-	.imgdisplayprojects {
-		margin-top: 5px;
-		width: 100%;
-		height: 188px;
-		background-color: var(--raisin-black);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		background-position: center;
-		background-size: cover; /*Contain if cringe*/
-		background-repeat: no-repeat;
-	}
-	
-	.bottompart {
-		margin: 0px 7px;
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-	}
-	
-	.quickbio {
-		margin: -7.5px 0px;
-		width: 211px;
-		height: 38px;
-	}
-	
-	.quickbio > p { font-size: 9pt; }
-	
-	.time {
-		margin-top: 7px;
-		background-color: var(--white);
-		width: 38px;
-		height: 38px;
-		border-radius: 50px;
-		display: flex;	
-		flex-direction: column;
-		justify-content: center;
-	}
-	
-	h4, h5 {
-		color: var(--davys-gray);
-		text-align: center;
-		margin: -0.5px;
-		font-family: sans-serif;
-		font-size: 10.5pt;
-	}
-	
-	h5 { margin-top: -6px; font-size: 8pt; }
-	
-	@media (max-width: 563px) {
-		a { transform: scale(0.75); margin: -60px -37px -25px; }
-		p > a { margin: unset; }
-	}
-	
-	#blanktop {
-		display: flex;
-		justify-content: flex-end;
-		background-color: var(--davys-gray);
-		width: 100%;
-		height: fit-content;
-		box-shadow: 0px 10px 10px var(--raisin-black);
-		flex-direction: column;
-		align-items: center;
-		padding-top: calc(var(--top-margin) - 50px);
-	}
-	
-</style>
-</head>
-<body onload="loaddata()", onhashchange="loadfromhash()">
-<div id="blanktop">
-<div class="featuredsection"><br>
-<h1>Welcome!</h1><br>
-<p>Thank you for visiting! My more detailed projects can be found here, with a smorgasbord of content displayed below.</p>
-</div>
 
-<div id="galleryprojects">
-	
-	<a href="./fnvhh"><div class="bigbox">
-		<h1 class="doublerow">
-		Friday Night Voltex:<br>
-		Heavenly Haven</h1>
-		<div class="tagsection">
-			<span class="tag">Animation</span>
-			<span class="tag">Style Matching</span>
-			<span class="tag">Logo Design</span>
-			<span class="tag">User Interface</span>
-			<span class="tag">Adapting Existing Designs</span>
-		</div>
-		<div class="imgdisplayprojects"
-			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/930620305385324594/unknown.png);">
-		</div>
-		<div class="bottompart">
-			<div class="quickbio">
-				<p>A mod for a rhythm game where I draw new characters, icons, & backgrounds! Still drawing & animating new content.</p>
-			</div>
-			<div class="time">
-				<h5>Apr.</h5>
-				<h4>2022</h4>
-			</div>
-		</div>
-	</div></a>
-	
-	<a href="./factimes/"><div class="bigbox">
-		<h1 class="singlerow">The Factory Times</h1>
-		<div class="tagsection">
-			<span class="tag">Article Design</span>
-			<span class="tag">New Foray</span>
-			<span class="tag">Logo Design</span>
-			<span class="tag">Style Matching</span>
-			<span class="tag">Designing for Print</span>
-		</div>
-		<div class="imgdisplayprojects"
-			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/971110668751212574/unknown.png);">
-		</div>
-		<div class="bottompart">
-			<div class="quickbio">
-				<p>A collection of the articles I designed for my college magazine. I did my best to create a lot of visual variety for each.</p>
-			</div>
-			<div class="time">
-				<h5>Apr.</h5>
-				<h4>2022</h4>
-			</div>
-		</div>
-	</div></a>
-	
-	<a href="./time/"><div class="bigbox">
-		<h1 class="doublerow">
-		Faces in TIME Magazine<br>
-		Website Creation</h1>
-		<div class="tagsection">
-			<span class="tag">Web Design</span>
-			<span class="tag">Interactive Art</span>
-			<span class="tag">New Foray</span>
-			<span class="tag">Client Interaction</span>
-			<span class="tag">Designing for Mobile</span>
-		</div>
-		<div class="imgdisplayprojects"
-			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/971177314681503785/unknown.png);">
-		</div>
-		<div class="bottompart">
-			<div class="quickbio">
-				<p>A Graduate Assistantship project that kicked off my deeper learning of CSS, HTML & JS coding! Under construction.</p>
-			</div>
-			<div class="time">
-				<h5>May</h5>
-				<h4>2022</h4>
-			</div>
-		</div>
-	</div></a>
-</div>
-<p>vvv Main Content vvv</p>
-</div>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-<!-- HEADER & ABOUT PORTION -->
-
-<div id="backborder">
-<div id="closeX" onclick="closeit()"><h1>X</h1></div>
-<div id="infobox">
-	<div class="half" id="sideB">
-		<div class="sectionlight">
-			<div id="imgdisplay"><img id="image">
-				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
-			</div>
-			<p id="date"><img src="../clock.svg"></p>
-			<p id="client"></p>
-		</div>
-	</div>
-	<div class="half" id="sideA">
-		<div class="section">
-			<p id="title"></p>
-			<h2>Bobby Zuch!</h2>
-			<div id="connection"></div>
-		</div>
-		<div class="section" id="unified"><br>
-			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="skills"></p><br>
-		</div>
-	</div>
-</div>
-</div>
-
-<div id="grayback" onclick="closeit()">
-	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
-</div>
-
-<div id="flexbg">
-	<div id="leftwall"></div>
-	<div id="middle"></div>
-	<div id="rightwall"></div>
-</div>
-<div id="flexcontent">
-	<div id="leftwall"></div>
-	<div id="gallery">
-		<h1 id="getridofme">Loading page content...</h1>
-		<noscript><h1 style="text-align: center">This page needs Javascript<br>enabled to function properly.</h1></noscript>
-	</div>
-	<div id="rightwall"></div>
-</div>
-
-
-<div id="header">
-	<div id="hback"><img src="./corner_new.svg"></div>
-	<a href=""><div id="hlogo"><img src="./logo.png" onclick="closeit()"></div></a>
-	<div id="htext"><a href="#top"><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
-	</div>
-</div>
-	
-</body>
-
-<script>
-
-var frame = document.getElementById("iframeA");
-
-frame.addEventListener('DOMContentLoaded', (event) => {
-	letsresize();
-});
-frame.onload = function() { letsresize(); document.getElementById("getridofme2").style.display = "none"; }
-frame.onresize = function() { letsresize(); }
-
-function letsresize() {
-  frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--raisin-black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-</script>
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	transition: text-shadow .05s;
+}
 
+#menuwrapper, #menuwrapper2 {
+	border-radius: 25px;
+	overflow: hidden;
+	width: 900px;
+	height: 515px;
+	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 10px;
+	
+	position: relative;
+}
+
+#menuwrapper2 {
+	width: 100%;
+	height: 100%;
+	transition: transform .25s;
+}
+
+.zoommain {
+	/* The original:
+	transform: scale(5);
+	transform-origin: 29.2% 17.1%;
+	*/
+	
+	/* For a more comfy size: */
+	transform: scale(4);
+	transform-origin: 27.7% 15%;
+	
+	/* For centering on the box instead:
+	transform: scale(11);
+	transform-origin: 36% 19.1%;
+	*/
+}
+
+/* I know I have the ID and class roles reversed here,
+but some child animation stuff wouldn't work otherwise. */
+#container {
+	position: relative;
+	overflow: hidden;
+	transition: filter .15s;
+	flex-grow: 1;
+}
+.choice1 { width: 600px; height: 300px; perspective: 1000px; perspective-origin: right; }
+.choice2 { width: 600px; height: 200px; }
+.choice3, .choice4, .choice5 { width: 290px; height: 150px; }
+.choice3 > .bgcolor, .choice4 > .bgcolor, .choice5 > .bgcolor { filter: brightness(.75) contrast(.9); }
+.choice3 h1, .choice4 h1, .choice5 h1 { font-size: 24pt; }
+
+#bg1 {
+	animation: galleryscroll 1s linear paused infinite;
+    height: 150%;
+    transform-origin: 0% 0%;
+	margin-left: 8%;
+}
+
+#bg2 {
+	animation: detailedscroll 5s linear paused infinite;
+    transform-origin: top;
+}
+
+#bg3a, #bg3b {
+    transform-origin: center;
+	width: 110%;
+	min-width: 600px;
+}
+
+#bg3a {
+	animation: resumescrollA .5s linear paused infinite;
+}
+
+#bg3b {
+	animation: resumescrollB .5s linear paused infinite reverse;
+	animation-direction: reverse;
+    top: unset;
+	bottom: 0;
+}
+
+.bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.bgcolor {
+	filter: brightness(.75) contrast(1.25);
+	transition: filter .25s;
+	animation: quickglow 2s 0.5s;
+}
+
+.textlabel, .flexedbagel {
+	margin: auto;
+	color: white;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-shadow: 0 0 5px black;
+	transition: text-shadow 0.15s;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+	
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.textlabel { opacity: 0.5; }
+
+.textlabel > *, .flexedbagel > * {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.icon { width: 30%; max-height: 50%; filter: drop-shadow(0 0 5px black); transition: filter .03s; }
+
+#container:hover * { animation-play-state: running; }
+#container:hover .bgcolor { filter: brightness(1) contrast(0.9); }
+
+#container:hover h1, #container:hover .icon { transform: translate(-2px, -2px); }
+#container:hover .textlabel > h1 {
+	text-shadow:
+		-2px -2px 0 #000,
+		-1px 1px 0 #000,
+		-2px 2px 0 #000,
+		-1px 3px 0 #000,
+		0px 4px 0 #000,
+		1px 5px 0 #000,
+		
+		2px -2px 0 #000,
+		1px -1px 0 #000,
+		2px 0px 0 #000,
+		3px 1px 0 #000,
+		4px 2px 0 #000,
+		
+		1px 1px 0 #000,
+		2px 2px 0 #000,
+		3px 3px 0 #000,
+		4px 4px 0 #000,
+		5px 5px 0 #000,
+		
+		3px -1px 0 #000,
+		4px 0px 0 #000,
+		5px 1px 0 #000,
+		5px 2px 0 #000,
+		5px 3px 0 #000,
+		5px 4px 0 #000
+		;
+}
+#container:hover > .textlabel > .icon {
+	filter:
+		drop-shadow(-1px -1px 0 #000)
+		drop-shadow(-1px 1px 0 #000)
+		drop-shadow(-1px 3px 0 #000)
+		drop-shadow(3px 1px 0 #000)
+		drop-shadow(5px 2px 0 #000)
+		;
+}
+
+#container:active h1, #container:active .icon { transform: none; }
+#container:active .textlabel > h1 { text-shadow: 2px 2px 0 #000; }
+#container:active > .textlabel > .icon { filter: drop-shadow(2px 2px 0 #000); }
+
+hr {
+	display: none;
+	height: 45%;
+	position: absolute;
+	left: 41.5%;
+	width: 0.5%;
+	background-color: var(--raisin-black);
+	opacity: 50%;
+	border: none;
+	border-radius: 25px;
+}
+
+#outertop {
+	padding: 10px 0px;
+	width: 100%;
+	height: fit-content;
+	overflow-x: hidden;
+}
+
+#gradient {
+	background: linear-gradient(90deg, var(--emerald-green) 0%, var(--pacific-blue) 33.3%, var(--emerald-green) 66.6%, var(--pacific-blue) 100%);
+	background-size: 300%;
+	width: 100%;
+	height: fit-content;
+	transform-origin: left;
+	animation: gradientmovement 3.5s linear infinite;
+	
+	border: solid 12px var(--davys-gray);
+}
+
+#thetop {
+	margin: 10px 0px;
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--davys-gray);
+}
+
+#logo {
+	width: 25vw;
+	max-width: 250px;
+	transform-origin: center center;
+	transform: scale(1.27);
+}
+
+#innerbanner {
+	height: 90%;
+	background-color: var(--raisin-black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px 0px;
+	width: 100%;
+	gap: 5%;
+}
+
+#introtext {
+	font-size: 12pt;
+	max-width: 555px;
+}
+
+#homebottomtext {
+	opacity: 50%;
+	font-size: 11pt;
+}
+
+/* ANIMATIONS */
+
+@keyframes gradientmovement {
+	from { background-position: 0%; }
+	to { background-position: 100%; }
+}
+
+@keyframes galleryscroll {
+	from { transform: rotateX(42deg) translateY(-2.25%); }
+	to { transform: rotateX(42deg) translateY(-17.75%); }
+}
+
+@keyframes detailedscroll {
+	from { transform: translateY(0%); }
+	to { transform: translateY(-68%); }
+}
+
+@keyframes resumescrollA {
+	from { transform: translateX(0%) translateY(-5%); }
+	to { transform: translateX(-3.2%) translateY(-5%); }
+}
+
+@keyframes resumescrollB {
+	from { transform: translateX(0%) translateY(5%); }
+	to { transform: translateX(-3.2%) translateY(5%); }
+}
+
+@keyframes quickglow {
+	0% { }
+	50% { filter: brightness(1) contrast(1); }
+	100% { }
+}
+
+
+/* RESPONSIVITY */
+
+@media (max-width: 899px) {
+	#menuwrapper, #menuwrapper2 {
+		width: unset;
+		height: unset;
+		max-width: 770px;
+	}
+	
+	#container {
+		width: 100vw;
+		max-width: 600px;
+	}
+	
+	.textlabel, .flexedbagel {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	
+	.textlabel > h1, .flexedbagel > h1 {
+		width: 53%;
+		text-align: left;
+		margin: auto;
+		margin-left: 0;
+	}
+	
+	.icon {
+		margin-right: 0;
+		flex-grow: 1;
+	}
+	
+	.choice1 { height: 35vmin; max-height: 210px; perspective: 135vmin; }
+	.choice2 { height: 28vmin; max-height: 168px; }
+	.choice3, .choice4, .choice5 { height: 20vmin; max-height: 120px; }
+	
+	.choice1 h1 { font-size: 45px; }
+	
+	#bg1 { height: 180%; }
+	
+	/*hr { display: block; }*/
+
+	#bg3a, #bg3b {
+		min-width: unset;
+	}
+	
+	#introtext {
+		font-size: 1.75vw;
+		max-width: 61%;
+	}
+	
+	#homebottomtext {
+		font-size: 1.75vw;
+	}
+
+	@keyframes resumescrollA {
+		from { transform: translateX(0%) translateY(-60%); }
+		to { transform: translateX(-3.2%) translateY(-60%); }
+	}
+
+	@keyframes resumescrollB {
+		from { transform: translateX(0%) translateY(60%); }
+		to { transform: translateX(-3.2%) translateY(60%); }
+	}
+}
+
+@media (max-width: 600px) {
+	.choice1 h1 { font-size: 7.5vw; }
+	.choice2 h1 { font-size: 6.5vw; }
+	.choice3 h1, .choice4 h1, .choice5 h1 { font-size: 5.25vw; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="gradient">
+	<div id="thetop">
+		<div id="innerbanner">
+			<img src="./logo_bg.png" id="logo">
+			<p id="introtext">That's my name! Welcome to my digital portfolio.
+			<br><br>
+			After a bunch of failed attempts with site builders and templates, I decided to make my website all by myself. I coded everything you see here by hand using nothing but pure HTML, CSS, and Javscript. Please, have a look around!</p>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+<noscript><h1>Hey, this site isn't gonna work so great without Javascript! You may want to switch to a different browser if you can.</h1></noscript>
+
+<div id="menuwrapper">
+<div id="menuwrapper2">
+
+	<div id="container" class="choice1">
+		<div class="flexedbagel bgcolor" style="background-color: var(--emerald-green)"></div>
+		<img id="bg1" class="bg" src="./homesvg/gallerysides.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_gallery.svg">
+			<hr>
+			<h1>Main Gallery</h1>
+		</div>
+		
+		<a href="./main/#?Featured" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_gallery.svg">
+			<hr>
+			<h1>Main Gallery</h1></a>
+	</div>
+
+	<div id="container" class="choice2">
+	<div class="flexedbagel bgcolor" style="background-color: var(--pacific-blue)"></div>
+		<img id="bg2" class="bg" src="./homesvg/detailed_page.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_detailed.svg">
+			<hr>
+			<h1>Larger Projects</h1>
+		</div>
+		
+		<a href="./expanded/" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_detailed.svg">
+			<hr>
+			<h1>Larger Projects</h1></a>
+	</div>
+
+	<div id="container" class="choice3">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<img id="bg3a" class="bg" src="./homesvg/resume_sides.svg">
+		<img id="bg3b" class="bg" src="./homesvg/resume_sides.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_resume.svg">
+			<hr>
+			<h1>Resume / Contact</h1>
+		</div>
+		
+		<a href="./resume/" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_resume.svg">
+			<hr>
+			<h1>Resume / Contact</h1></a>
+	</div>
+
+	<!--div id="container" class="choice4">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<!img id="bg2" class="bg" src="./homesvg/.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<hr>
+			<h1>Coming Soon</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<hr>
+			<h1>Coming Soon</h1></a>
+	</div>
+
+	<div id="container" class="choice5">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<!img id="bg2" class="bg" src="./homesvg/.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<hr>
+			<h1>Coming Soon</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<hr>
+			<h1>Coming Soon</h1></a>
+	</div-->
+	
+</div>
+</div>
+<br>
+<p style="opacity: 50%;">More options coming soon!</p>
+<br><br><br>
+<p id="homebottomtext">All content from this website is ©Bobby Zuch 2022. All Rights Reserved. For use with permission only.</p>
+
+</body>
+<script>
+
+</script>
 </html>

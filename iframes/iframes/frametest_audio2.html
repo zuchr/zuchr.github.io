@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css" type="text/css">
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+<script src="https://unpkg.com/plyr@3.6.12/dist/plyr.min.js"></script>
+<style>
+:root {
+	--emerald-green: #1DCC6D;
+	--pacific-blue: #21ACCC;
+	--raisin-black: transparent;
+	--raisin-black-real: #231F20;
+	--davys-gray: #444949;
+	--orange-accent: #F7A51C;
+	--white: #FFFFFF;
+	--accessibility-color: yellow;
+	
+	--plyr-color-main: var(--pacific-blue);
+	--plyr-audio-control-color: var(--emerald-green);
+	--plyr-menu-color: var(--emerald-green);
+	--plyr-menu-back-border-color: var(--white);
+	--plyr-menu-color: var(--raisin-black);
+	--plyr-menu-background: var(--raisin-black);
+	--plyr-audio-controls-background: var(--raisin-black);
+	
+	//--plyr-font-size-base:
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	/*font-family: Roboto;*/
+
+@font-face {
+	font-family: HelveticaRB;
+	src: url(../fonts/HelveticaRounded-Bold.ttf);
+}
+
+@font-face {
+	font-family: RobotoCBI;
+	src: url(../fonts/RobotoCondensed-BoldItalic.ttf);
+}
+
+body {
+	overflow: hidden;
+}
+
+.plyr { font-family: HelveticaRB; }
+.plyr__controls { padding-top: 0px; width: 90%; }
+.plyr__menu { display: none; }
+.plyr__time { width: 47px; }
+
+.outer {
+	border-radius: 15px;
+	background-color: var(--raisin-black-real);
+	position: relative;
+	max-width: 500px;
+}
+
+.notaudio {
+	width: 10%;
+	height: 54px;
+	right: 10px;
+	top: 10px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notaudio > img {
+	max-height: 54px;
+	max-width: 100%;
+}
+
+.t1, .t2 {
+	font-family: HelveticaRB;
+	font-size: 14pt;
+	color: var(--emerald-green);
+	position: relative;
+	left: 15px;
+	top: 10px;
+}
+
+.t2 { font-size: 11pt; }
+
+.bigflexer, .twosongs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.bigflexer { flex-direction: column; }
+
+</style>
+
+<body>
+<div class="bigflexer">
+	<div class="twosongs">
+		<div class="outer">
+		<span class="t1">Marina</span><span class="t2"> - First Date</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354513882042408/fish.png"></div>
+		<audio crossorigin playsinline preload="auto">
+			<source src="../audiofiles/RomDateMarina.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+		<div class="outer">
+		<span class="t1">Marina</span><span class="t2"> - Second Date</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354513882042408/fish.png"></div>
+		<audio crossorigin playsinline preload="auto">
+			<source src="../audiofiles/RomDateMarina2.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+	</div>
+	<div class="twosongs">
+		<div class="outer">
+		<span class="t1">Cameron</span><span class="t2"> - First Date</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354511562600529/camera.png"></div>
+		<audio crossorigin playsinline preload="auto">
+			<source src="../audiofiles/RomDateCameron.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+		<div class="outer">
+		<span class="t1">Cameron</span><span class="t2"> - Second Date (Ambushed)</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354511562600529/camera.png"></div>
+		<audio crossorigin playsinlinepreload="auto">
+			<source src="../audiofiles/RomDateCameron2.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+	</div>
+	<div class="twosongs">
+		<div class="outer">
+		<span class="t1">Calam</span><span class="t2"> - First Date</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354511298338886/knife.png"></div>
+		<audio crossorigin playsinline preload="auto">
+			<source src="../audiofiles/RomDateCalam.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+		<div class="outer">
+		<span class="t1">Calam</span><span class="t2"> - Second Date</span>
+		<div class="notaudio"><img src="https://cdn.discordapp.com/attachments/901206407695728660/965354511298338886/knife.png"></div>
+		<audio crossorigin playsinline preload="auto">
+			<source src="../audiofiles/RomDateCalam2.m4a">
+			<span class="t1">Your browser doesn't support this audio!</span>
+		</audio>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+
+<script>
+// Change "{}" to your options:
+// https://github.com/sampotts/plyr/#options
+const players = Array.from(document.querySelectorAll('audio')).map((p) => new Plyr(p));
+
+// Expose player so it can be used from the console
+window.player = player;
+
+/*console.log(window.parent.innerWidth);
+var r = document.querySelector('body');
+
+window.onload = function(){
+	funny();
+}
+window.onresize = function(){
+	funny();
+}
+
+function funny() {
+	if (window.parent.innerWidth <= 300) {
+		r.style.setProperty('background-color', 'green');
+	}
+	else if (window.parent.innerWidth > 300) {
+		r.style.setProperty('background-color', 'cyan');
+	}
+}
+
+<div class="container">
+	<div class="outer">
+	<div class="upper">
+	<div class="audiotext"> <span class="t1">Track</span><span class="t2"> - Info</span> </div>
+	<img src="https://cdn.discordapp.com/attachments/901206407695728660/965354513882042408/fish.png">
+	</div>
+	<audio crossorigin playsinline>
+		<source src="../audiofiles/RomDateCalem.m4a">
+		Your browser doesn't support this audio!
+	</audio>
+	</div>
+</div>
+
+*/
+</script>
+</html>

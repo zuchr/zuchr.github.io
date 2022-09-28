@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#flexcontent {
+	flex-direction: column;
+}
+
+#introtext {
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+}
+
+#outercontactblock {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contactblock {
+	display: flex;
+	margin: 10px;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.contactblock a {
+	display: contents;
+}
+
+.contactblock img {
+	margin-right: 10px;
+	object-fit: contain;
+}
+
+iframe {
+	border-radius: 15px;
+	border: none;
+	z-index: 1;
+	max-height: 191vw;
+}
+
+.contactblock h1 {
+	font-size: 18pt;
+}
+
+body { background-color: var(--raisin-black); }
+
+@media (max-width: 800px) {
+	#flexcontent { zoom: 0.66; }
+	#introtext { margin-top: 100px; }
+}
+</style>
+</head>
+<body>
+<div id="flexcontent">
+	<div id="introtext">
+		<h1>Contact Me</h1>
+		<p>Feel free to get in touch with me. I'll be glad to hear from you!</p>
+	</div>
+	<div id="gallery" style="margin-bottom: 0px;">
+	<span id="outercontactblock">
+		<span class="contactblock">
+		<img src="../contact_mail.png"><h1><a href="mailto:bobbyzuch1@gmail.com">bobbyzuch1@gmail.com</a>
+		</h1></span>
+		
+		<!-- <span class="contactblock"><a href="https://zuchr.github.io">
+		<img src="../contact_site.png"></a><h1><a href="https://zuchr.github.io"></a><a href="https://zuchr.github.io">zuchr.github.io</a></h1> -->
+		</span>
+	</span>
+	</div>
+	<div id="introtext" style="margin-top: 15px;">
+	<hr style="max-width: 95%; width: 800px;">
+		<h1>My Resume</h1>
+		<p></p>
+	</div>
+	<div id="gallery">
+		<iframe src="../BobbyZuch_Resume_22-8-23.pdf" width="100%" height="1055px" style="max-width: 95%"></iframe>
+	</div>
+</div>
+
+<div id="header">
+	<div id="hback"><img src="../corner_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
+	</div>
+</div>
+
+<!-- HEADER & ABOUT PORTION -->
+
+<div id="backborder">
+<div id="closeXholder">
+	<div class="closeX" id="closeX" onclick="closeit()" style="display: initial;"><h1>X</h1></div>
+</div>
+<div id="infobox">
+	<div class="half" id="sideB">
+		<div class="sectionlight">
+			<p id="extra">(Click the image to play it in a new window)</p>
+			<div id="imgdisplay"><img id="image">
+				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
+			</div>
+			<p id="date"><img src="../clock.svg"></p>
+			<p id="client"></p>
+		</div>
+	</div>
+	<div class="half" id="sideA">
+		<div class="section">
+			<p id="title"></p>
+			<h2 id="category">Bobby Zuch!</h2>
+			<div id="connection"></div>
+		</div>
+		<div class="section" id="unified"><br>
+			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="skills"></p><br>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+</body>
+</html>

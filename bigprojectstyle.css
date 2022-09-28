@@ -1,0 +1,134 @@
+#galleryprojects {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: auto;
+	margin-top: 20px;
+	max-width: 1230px;
+	width: 100%;
+	z-index: 1;
+}
+
+.bigbox {
+	background-color: var(--raisin-black);
+	width: 263px;
+	height: 332px;
+	color: var(--white);
+	font-family: Roboto;
+	border-radius: 25px 25px 25px 5px;
+	box-shadow: 0px 7px 7px 4px var(--raisin-black);
+	transition: box-shadow .25s, transform .25s;
+	margin: 10px 5px;
+	transform-origin: center;
+}
+
+.bigbox:hover {
+	box-shadow: 0px 0px 0px 5px var(--emerald-green);
+	transform: scale(1.05);
+	cursor: pointer;	
+	z-index: 1;
+}
+
+.singlerow {
+	font-size: 19pt;
+	text-align: center;
+	height: 38px; /*60px total with padding*/
+	margin: 0px;
+	padding: 8px 0px 0px;
+}
+
+.doublerow {
+	font-size: 14pt;
+	text-align: center;
+	line-height: 14pt;
+	height: 40px; /*60px total with padding*/
+	margin: 0px;
+	padding: 5px 0px 2px;
+}
+
+.tagsection {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 37px;
+}
+
+.tag {
+	min-width: 24%;
+	text-align: center;
+	background-color: var(--orange-accent);
+	border-radius: 8px;
+	padding: 0px 2%;
+	color: darkred; /*Refine this*/
+	font-size: 9pt;
+}
+
+.imgdisplayprojects {
+	margin-top: 5px;
+	width: 100%;
+	height: 188px;
+	background-color: var(--raisin-black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-position: center;
+	background-size: cover; /*Contain if cringe*/
+	background-repeat: no-repeat;
+}
+
+.bottompart {
+	margin: 0px 7px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.quickbio {
+	margin: -7.5px 0px;
+	width: 211px;
+	height: 38px;
+}
+
+.quickbio > p { font-size: 9pt; }
+
+.time {
+	margin-top: 7px;
+	background-color: var(--white);
+	width: 38px;
+	height: 38px;
+	border-radius: 50px;
+	display: flex;	
+	flex-direction: column;
+	justify-content: center;
+}
+
+h4, h5 {
+	color: var(--davys-gray);
+	text-align: center;
+	margin: -0.5px;
+	font-family: sans-serif;
+	font-size: 10.5pt;
+}
+
+h5 { margin-top: -6px; font-size: 8pt; }
+
+@media (max-width: 563px) {
+	a { transform: scale(0.75); margin: -60px -37px -25px; }
+	p > a { margin: unset; }
+}
+
+#blanktop {
+	display: flex;
+	justify-content: flex-end;
+	background-color: var(--davys-gray);
+	width: 100%;
+	height: fit-content;
+	box-shadow: 0px 10px 10px var(--raisin-black);
+	flex-direction: column;
+	align-items: center;
+	padding-top: calc(var(--top-margin) - 50px);
+}
