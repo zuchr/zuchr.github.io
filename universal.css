@@ -45,7 +45,7 @@ a:active { color: var(--emerald-green); }
 
 /* Text: */
 
-h2 { font-family: RobotoCBI, monospace; color: var(--raisin-black); }
+h2 { font-family: RobotoCBI, monospace; color: var(--raisin-black); font-weight: normal; }
 p, span { font-family: Roboto, sans-serif; color: var(--white); font-size: 11pt; }
 h1, #title { font-family: HelveticaRB, sans-serif;  color: var(--white); letter-spacing: 0pt; font-size: 30pt; font-weight: normal; }
 #unified p, #unified span { font-size: 11.75pt; }
