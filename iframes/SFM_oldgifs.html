@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#holder {
+	position: relative;
+	//max-height: 55vw;
+	//height: 100%;
+	margin: 0;
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flexer {
+	display: flex;
+	flex-direction: column;
+	width: 33%;
+	height: 50%;
+	flex-grow: 1;
+	max-width: 100vw;
+}
+
+#img1 { width: 100% }
+#img4 { flex-grow: 1; width: 33% }
+
+</style>
+</head>
+<body>
+	<div id="holder">
+		<img id="img1" src="https://static.wixstatic.com/media/f39f1b_0f2a7b05164440aa91527171df674004~mv2.gif" alt="TF2's Scout riding a Mario Kart.">
+		<img id="img4" src="https://static.wixstatic.com/media/f39f1b_389103993c5d4418960f4262341b1506~mv2.gif" alt="A TF2 Sniper doing a famous Russian dance.">
+		<div class="flexer">
+			<img id="img2" src="https://static.wixstatic.com/media/f39f1b_166c910377e542b89aef0dac5ae95925~mv2.gif" alt="A TF2 Demoman drinking too much and collapsing.">
+			<img id="img3" src="https://static.wixstatic.com/media/f39f1b_50c82a36fa5b46af913e22092a967dd2~mv2.gif" alt="A TF2 Engineer posing next to a self-building sentry gun.">
+		</div>
+	</div>
+</body>
+</html>
