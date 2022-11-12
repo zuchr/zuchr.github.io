@@ -24,6 +24,12 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 	
+	button { /* Overriding default button styles */
+		border: none;
+		font: inherit;
+		outline: inherit;
+	}
+	
 	#blanktop {
 		display: flex;
 		justify-content: flex-end;
@@ -49,7 +55,7 @@
 		padding: 2px 5px;
 		border-radius: 25px;
 		cursor: pointer;
-		height: 20px;
+		/*height: 20px; No longer needed with buttons. */
 		color: var(--raisin-black);
 		font-family: 'RobotoCBI';
 		min-width: 30px;
@@ -93,23 +99,23 @@
 
 <div id="filters">
 	<div id="toprow">
-		<div class="filter" id="All" onclick="filter(this)">All Content</div>
-		<div class="filter" id="Featured" onclick="filter(this)">Featured Works</div>
-		<div class="filter">
+		<button class="filter" id="All" onclick="filter(this)">All Content</button>
+		<button class="filter" id="Featured" onclick="filter(this)">Featured Works</button>
+		<button class="filter">
 			<input type="text" value="" id="searchbar" placeholder="Search for a phrase..." onchange="filter(this)">
 			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)">
-		</div>
+		</button>
 	</div>
-	<div class="filter" id="Graphics" onclick="filter(this)">Graphics</div>
-	<div class="filter" id="Web-Designs" onclick="filter(this)">Web Designs</div>
-	<div class="filter" id="Games+Demos" onclick="filter(this)">Games & Demos</div>
-	<div class="filter" id="Article-Designs" onclick="filter(this)">Article Designs</div>
-	<div class="filter" id="Pixel-Art" onclick="filter(this)">Pixel Art</div>
-	<div class="filter" id="2D-Animation" onclick="filter(this)">2D Animation</div>
-	<div class="filter" id="3D-Animation" onclick="filter(this)">3D Animation</div>
-	<div class="filter" id="Drawings" onclick="filter(this)">Drawings</div>
-	<div class="filter" id="Digital-Music" onclick="filter(this)">Digital Music</div>
-	<div class="filter" id="3D-Modeling+Texturing" onclick="filter(this)">3D Modeling & Texturing</div>
+	<button class="filter" id="Graphics" onclick="filter(this)">Graphics</button>
+	<button class="filter" id="Web-Designs" onclick="filter(this)">Web Designs</button>
+	<button class="filter" id="Games+Demos" onclick="filter(this)">Games & Demos</button>
+	<button class="filter" id="Article-Designs" onclick="filter(this)">Article Designs</button>
+	<button class="filter" id="Pixel-Art" onclick="filter(this)">Pixel Art</button>
+	<button class="filter" id="2D-Animation" onclick="filter(this)">2D Animation</button>
+	<button class="filter" id="3D-Animation" onclick="filter(this)">3D Animation</button>
+	<button class="filter" id="Drawings" onclick="filter(this)">Drawings</button>
+	<button class="filter" id="Digital-Music" onclick="filter(this)">Digital Music</button>
+	<button class="filter" id="3D-Modeling+Texturing" onclick="filter(this)">3D Modeling & Texturing</button>
 </div>
 
 <br>
