@@ -473,7 +473,7 @@ button { /* Overriding default button styles */
 	user-select: none;
 }
 
-.closeX > h1, #closeX2 > h1, .closeXhidden > h1 {
+.closeX > h1, #closeX > h1, #closeX2 > h1, .closeXhidden > h1 {
     transform: skewX(-25deg);
 	color: white;
 	margin: 0;
