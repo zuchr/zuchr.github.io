@@ -58,6 +58,11 @@ body {
 	background-color: var(--davys-gray);
 	overflow-x: hidden;
 }
+	
+button { /* Overriding default button styles */
+	border: none;
+	font: inherit;
+}
 
 #backhomebutton {
 	display: flex;
@@ -79,7 +84,7 @@ body {
 	transition: background-color .5s;
 }
 
-#backhomebutton p:hover {
+#backhomebutton p:hover, #backhomebutton p:focus {
 	background-color: var(--pacific-blue);
 }
 
@@ -455,7 +460,7 @@ body {
 	display: flex;
 }
 
-.closeX, #closeX2, .closeXhidden {
+.closeX, #closeX, #closeX2, .closeXhidden {
     transform: skewX(25deg) scale(0.85);
     padding: 0px 10px;
     background-color: #231f20;
