@@ -156,11 +156,11 @@ but some child animation stuff wouldn't work otherwise. */
 
 .icon { width: 30%; max-height: 50%; filter: drop-shadow(0 0 5px black); transition: filter .03s; }
 
-#container:hover * { animation-play-state: running; }
-#container:hover .bgcolor { filter: brightness(1) contrast(0.9); }
+#container:hover *, #container:focus * { animation-play-state: running; }
+#container:hover .bgcolor, #container:focus .bgcolor { filter: brightness(1) contrast(0.9); }
 
-#container:hover h1, #container:hover .icon { transform: translate(-2px, -2px); }
-#container:hover .textlabel > h1 {
+#container:hover h1, #container:hover .icon, #container:focus h1, #container:focus .icon { transform: translate(-2px, -2px); }
+#container:hover .textlabel > h1, #container:focus .textlabel > h1 {
 	text-shadow:
 		-2px -2px 0 #000,
 		-1px 1px 0 #000,
@@ -189,7 +189,7 @@ but some child animation stuff wouldn't work otherwise. */
 		5px 4px 0 #000
 		;
 }
-#container:hover > .textlabel > .icon {
+#container:hover > .textlabel > .icon, #container:focus > .textlabel > .icon {
 	filter:
 		drop-shadow(-1px -1px 0 #000)
 		drop-shadow(-1px 1px 0 #000)
