@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Bobby Zuch! 😎 - Landing Page</title>
+<title>Main Menu - Bobby Zuch!</title>
 
 <meta property="og:title" content="Bobby Zuch!" />
 <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="universal.css?v=1.2" type="text/css">
+  <link rel="stylesheet" href="universal.css?v=1.3" type="text/css">
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -123,10 +123,10 @@ but some child animation stuff wouldn't work otherwise. */
 .bgcolor {
 	filter: brightness(.75) contrast(1.25);
 	transition: filter .25s;
-	animation: quickglow 2s 0.5s;
+	animation: quickglow 1s 0.5s;
 }
 
-.textlabel, .flexedbagel {
+.backgroundtextlabel, .textlabel {
 	margin: auto;
 	color: white;
 	position: absolute;
@@ -147,9 +147,9 @@ but some child animation stuff wouldn't work otherwise. */
 	-ms-user-select: none;
 }
 
-.textlabel { opacity: 0.5; }
+.backgroundtextlabel { opacity: 0.5; }
 
-.textlabel > *, .flexedbagel > * {
+.backgroundtextlabel > *, .textlabel > * {
 	text-align: center;
 	margin: 0 auto;
 }
@@ -160,7 +160,7 @@ but some child animation stuff wouldn't work otherwise. */
 #container:hover .bgcolor, #container:focus-within .bgcolor { filter: brightness(1) contrast(0.9); }
 
 #container:hover h1, #container:hover .icon, #container:focus-within h1, #container:focus-within .icon { transform: translate(-2px, -2px); }
-#container:hover .textlabel > h1, #container:focus-within .textlabel > h1 {
+#container:hover .backgroundtextlabel > h1, #container:focus-within .backgroundtextlabel > h1 {
 	text-shadow:
 		-2px -2px 0 #000,
 		-1px 1px 0 #000,
@@ -189,7 +189,7 @@ but some child animation stuff wouldn't work otherwise. */
 		5px 4px 0 #000
 		;
 }
-#container:hover > .textlabel > .icon, #container:focus-within > .textlabel > .icon {
+#container:hover > .backgroundtextlabel > .icon, #container:focus-within > .backgroundtextlabel > .icon {
 	filter:
 		drop-shadow(-1px -1px 0 #000)
 		drop-shadow(-1px 1px 0 #000)
@@ -200,8 +200,8 @@ but some child animation stuff wouldn't work otherwise. */
 }
 
 #container:active h1, #container:active .icon { transform: none; }
-#container:active .textlabel > h1 { text-shadow: 2px 2px 0 #000; }
-#container:active > .textlabel > .icon { filter: drop-shadow(2px 2px 0 #000); }
+#container:active .backgroundtextlabel > h1 { text-shadow: 2px 2px 0 #000; }
+#container:active > .backgroundtextlabel > .icon { filter: drop-shadow(2px 2px 0 #000); }
 
 hr {
 	display: none;
@@ -271,6 +271,16 @@ hr {
 	font-size: 11pt;
 }
 
+h3 {
+	width: 95%;
+	max-width: 720px;
+	text-align: center;
+	color: white;
+	font-family: 'HelveticaRB';
+	font-size: 18pt;
+	margin-bottom: 42px;
+}
+
 /* ANIMATIONS */
 
 @keyframes gradientmovement {
@@ -300,7 +310,7 @@ hr {
 
 @keyframes quickglow {
 	0% { }
-	50% { filter: brightness(1) contrast(1); }
+	50% { filter: brightness(.9) contrast(0.9); }
 	100% { }
 }
 
@@ -319,13 +329,13 @@ hr {
 		max-width: 600px;
 	}
 	
-	.textlabel, .flexedbagel {
+	.backgroundtextlabel, .textlabel {
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-start;
 	}
 	
-	.textlabel > h1, .flexedbagel > h1 {
+	.backgroundtextlabel > h1, .textlabel > h1 {
 		width: 53%;
 		text-align: left;
 		margin: auto;
@@ -336,6 +346,8 @@ hr {
 		margin-right: 0;
 		flex-grow: 1;
 	}
+	
+	#innerbanner { margin: 2.2vw 0; }
 	
 	.choice1 { height: 35vmin; max-height: 210px; perspective: 135vmin; }
 	.choice2 { height: 28vmin; max-height: 168px; }
@@ -375,16 +387,17 @@ hr {
 	.choice1 h1 { font-size: 7.5vw; }
 	.choice2 h1 { font-size: 6.5vw; }
 	.choice3 h1, .choice4 h1, .choice5 h1 { font-size: 5.25vw; }
+	h3 { font-size: 3.15vw; }
 }
 
 </style>
 </head>
 <body>
 
-<div id="gradient">
+<div id="gradient" style="margin-bottom: 36px;">
 	<div id="thetop">
 		<div id="innerbanner">
-			<img src="./logo_bg.png" id="logo">
+			<img src="./logo_bg.png" id="logo" alt="Logo: 'Bobby Zuch!'">
 			<p id="introtext">That's my name! Welcome to my digital portfolio.
 			<br><br>
 			After using all sorts of site builders and templates, I decided to make my website all by myself. I coded everything you see here by hand using nothing but pure HTML, CSS, and Javscript. Please, have a look around!</p>
@@ -392,89 +405,87 @@ hr {
 	</div>
 </div>
 
-<br><br>
+<noscript><h3>Hey, this site isn't gonna work so great without Javascript! You may want to switch to a different browser if you can.</h3></noscript>
 
-<noscript><h1>Hey, this site isn't gonna work so great without Javascript! You may want to switch to a different browser if you can.</h1></noscript>
-
-<div id="menuwrapper">
+<div id="menuwrapper" style="margin-bottom: 18px;">
 <div id="menuwrapper2">
 
 	<div id="container" class="choice1">
-		<div class="flexedbagel bgcolor" style="background-color: var(--emerald-green)"></div>
-		<img id="bg1" class="bg" src="./homesvg/gallerysides.svg">
+		<div class="textlabel bgcolor" style="background-color: var(--emerald-green)"></div>
+		<img id="bg1" class="bg" src="./homesvg/gallerysides.svg" alt="">
 		
-		<div class="textlabel">
-			<img class="icon" src="./homesvg/icon_gallery.svg">
+		<div class="backgroundtextlabel" aria-hidden="true">
+			<img class="icon" src="./homesvg/icon_gallery.svg" alt="">
 			<hr>
 			<h1>Main Gallery</h1>
 		</div>
 		
-		<a href="./main/#?Featured" class="flexedbagel">
-			<img class="icon" src="./homesvg/icon_gallery.svg">
+		<a href="./main/#?Featured" class="textlabel">
+			<img class="icon" src="./homesvg/icon_gallery.svg" alt="Icon of the infobox seen in the Main Gallery.">
 			<hr>
 			<h1>Main Gallery</h1></a>
 	</div>
 
 	<div id="container" class="choice2">
-	<div class="flexedbagel bgcolor" style="background-color: var(--pacific-blue)"></div>
-		<img id="bg2" class="bg" src="./homesvg/detailed_page.svg">
+	<div class="textlabel bgcolor" style="background-color: var(--pacific-blue)"></div>
+		<img id="bg2" class="bg" src="./homesvg/detailed_page.svg" alt="">
 		
-		<div class="textlabel">
-			<img class="icon" src="./homesvg/icon_detailed.svg">
+		<div class="backgroundtextlabel" aria-hidden="true">
+			<img class="icon" src="./homesvg/icon_detailed.svg" alt="">
 			<hr>
 			<h1>Expanded Projects</h1>
 		</div>
 		
-		<a href="./expanded/" class="flexedbagel">
-			<img class="icon" src="./homesvg/icon_detailed.svg">
+		<a href="./expanded/" class="textlabel">
+			<img class="icon" src="./homesvg/icon_detailed.svg" alt="Icon of the preview box seen in the Expanded Projects page.">
 			<hr>
 			<h1>Expanded Projects</h1></a>
 	</div>
 
 	<div id="container" class="choice3">
-	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
-		<img id="bg3a" class="bg" src="./homesvg/resume_sides.svg">
-		<img id="bg3b" class="bg" src="./homesvg/resume_sides.svg">
+	<div class="textlabel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<img id="bg3a" class="bg" src="./homesvg/resume_sides.svg" alt="">
+		<img id="bg3b" class="bg" src="./homesvg/resume_sides.svg" alt="">
 		
-		<div class="textlabel">
-			<img class="icon" src="./homesvg/icon_resume.svg">
+		<div class="backgroundtextlabel" aria-hidden="true">
+			<img class="icon" src="./homesvg/icon_resume.svg" alt="">
 			<hr>
 			<h1>Resume / Contact</h1>
 		</div>
 		
-		<a href="./resume/" class="flexedbagel">
-			<img class="icon" src="./homesvg/icon_resume.svg">
+		<a href="./resume/" class="textlabel">
+			<img class="icon" src="./homesvg/icon_resume.svg" alt="Icon of work experience listings as seen on my resume.">
 			<hr>
 			<h1>Resume / Contact</h1></a>
 	</div>
 
 	<!--div id="container" class="choice4">
-	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+	<div class="textlabel bgcolor" style="background-color: var(--davys-gray)"></div>
 		<!img id="bg2" class="bg" src="./homesvg/.svg">
 		
-		<div class="textlabel">
+		<div class="backgroundtextlabel">
 			<img class="icon" src="./homesvg/icon_.svg">
 			<hr>
 			<h1>Coming Soon</h1>
 		</div>
 		
-		<a href="" class="flexedbagel">
+		<a href="" class="textlabel">
 			<img class="icon" src="./homesvg/icon_.svg">
 			<hr>
 			<h1>Coming Soon</h1></a>
 	</div>
 
 	<div id="container" class="choice5">
-	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+	<div class="textlabel bgcolor" style="background-color: var(--davys-gray)"></div>
 		<!img id="bg2" class="bg" src="./homesvg/.svg">
 		
-		<div class="textlabel">
+		<div class="backgroundtextlabel">
 			<img class="icon" src="./homesvg/icon_.svg">
 			<hr>
 			<h1>Coming Soon</h1>
 		</div>
 		
-		<a href="" class="flexedbagel">
+		<a href="" class="textlabel">
 			<img class="icon" src="./homesvg/icon_.svg">
 			<hr>
 			<h1>Coming Soon</h1></a>
@@ -482,7 +493,7 @@ hr {
 	
 </div>
 </div>
-<br>
+
 <p style="opacity: 50%;">More options coming soon!</p>
 <br><br><br>
 <p id="homebottomtext">All content from this website is ©Bobby Zuch 2022. All Rights Reserved. For use with permission only.</p>
