@@ -6,6 +6,12 @@ function moveit() {
 	info.style.animationTimingFunction = "ease-out";
 	document.getElementById("grayback").style.display = "initial";
 	document.getElementById("closeX").style.display = "initial";
+	
+	let filtersdiv = document.getElementById('filters');
+	if (filtersdiv !== null) {
+		filtersdiv.setAttribute("inert", "");
+		gallery.setAttribute("inert", "");
+	}
 }
 
 function moveitout() {
@@ -17,6 +23,12 @@ function moveitout() {
 		info.style.animationTimingFunction = "ease-in";
 		document.getElementById("grayback").style.display = "none";
 		document.getElementById("closeX").style.display = "none";
+	}
+	
+	let filtersdiv = document.getElementById('filters');
+	if (filtersdiv !== null) {
+		filtersdiv.removeAttribute("inert");
+		gallery.removeAttribute("inert");
 	}
 }
 
