@@ -105,8 +105,20 @@ function loadfromhash() { //Performs actions based around the number of the hash
 
 	if( filled == 0 ) { //Populates the main gallery on the initial run.
 		let gallery = document.getElementById("gallery");
+		let cachedyear;
 		
 		for (let i = 0; i <= (data.length - 1); i++) {
+			//Populate yearly dividers, based on the last 4 digits:
+			if (data[i].Date.slice(-4) !== cachedyear && searchstring !== 'Featured') {
+				cachedyear = data[i].Date.slice(-4);
+				
+				let d = document.createElement("DIV");
+				d.setAttribute("class", "yearlydivider");
+				d.innerHTML = cachedyear;
+				gallery.appendChild(d);
+			}
+			
+			//Populate thumbnails:
 			let x = document.createElement("IMG");
 			x.setAttribute("id", "imgnum" + i);
 			x.setAttribute("onclick", "makehash('" + data[i].Permahash + "')");
@@ -121,52 +133,52 @@ function loadfromhash() { //Performs actions based around the number of the hash
 	//The above code populates the main page with the thumbnail images from the TSV if they haven't been loaded already. It even creates the HTML elements as well!
 	//Infobox populating code below:
 	if (hashname != "") { // Removes error message on blank initial load.
-	let thisImageGetsReferenced16Times = document.getElementById("image");
-	thisImageGetsReferenced16Times.src = ""; //Quickly clear the last image before it slides in.
-	document.getElementById("title").innerHTML = (data[currentrow].Title);
-	document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + (data[currentrow].Date);
-	document.getElementById("desc").innerHTML = (data[currentrow].Info);
-	document.getElementById("diff").innerHTML = (data[currentrow].Difficulties);
-	document.getElementById("skills").innerHTML = "<b>Skills:</b> " + (data[currentrow].Skills);
-	document.getElementById("software").innerHTML = "<b>Software:</b> " + (data[currentrow].Software);
-	document.getElementById("client").innerHTML = (data[currentrow].Client);
-	document.getElementById("category").innerHTML = (data[currentrow].Category).replace(/-/g, " ").replace(/\+/g, " & ");
-	if (data[currentrow].Type === "img") {
-		//console.log("imgtime");
-		document.getElementById("iframeouter").style.display = "none";
-		document.getElementById("iframeA").src = "";
-		thisImageGetsReferenced16Times.style.display = "block";
-		thisImageGetsReferenced16Times.src = (data[currentrow].URL);
-		thisImageGetsReferenced16Times.removeAttribute("onclick");
-		thisImageGetsReferenced16Times.style.cursor = "";
-		thisImageGetsReferenced16Times.parentElement.removeAttribute("class");
-		document.getElementById("extra").style.display = "none"; }
+		let infoboximage = document.getElementById("image");
+		infoboximage.src = ""; //Quickly clear the last image before it slides in.
+		document.getElementById("title").innerHTML = (data[currentrow].Title);
+		document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + (data[currentrow].Date);
+		document.getElementById("desc").innerHTML = (data[currentrow].Info);
+		document.getElementById("diff").innerHTML = (data[currentrow].Difficulties);
+		document.getElementById("skills").innerHTML = "<b>Skills:</b> " + (data[currentrow].Skills);
+		document.getElementById("software").innerHTML = "<b>Software:</b> " + (data[currentrow].Software);
+		document.getElementById("client").innerHTML = (data[currentrow].Client);
+		document.getElementById("category").innerHTML = (data[currentrow].Category).replace(/-/g, " ").replace(/\+/g, " & ");
+		if (data[currentrow].Type === "img") {
+			//console.log("imgtime");
+			document.getElementById("iframeouter").style.display = "none";
+			document.getElementById("iframeA").src = "";
+			infoboximage.style.display = "block";
+			infoboximage.src = (data[currentrow].URL);
+			infoboximage.removeAttribute("onclick");
+			infoboximage.style.cursor = "";
+			infoboximage.parentElement.removeAttribute("class");
+			document.getElementById("extra").style.display = "none"; }
+			
+		else if (data[currentrow].Type === "iframe") {
+			//console.log("iframetime");
+			document.getElementById("getridofme2").style.display = "block"; //Will turn back to none after loading.
+			infoboximage.style.display = "none";
+			infoboximage.src = "";
+			infoboximage.removeAttribute("onclick");
+			infoboximage.style.cursor = "";
+			document.getElementById("iframeouter").style.display = "flex";
+			document.getElementById("iframeA").src = (data[currentrow].URL);
+			infoboximage.parentElement.removeAttribute("class");
+			document.getElementById("extra").style.display = "none"; }
+			
+		else { // When the Type column contains something else, like a URL, link to it:
+			//console.log("clickabletime");
+			document.getElementById("iframeouter").style.display = "none";
+			document.getElementById("iframeA").src = "";
+			infoboximage.style.display = "block";
+			infoboximage.src = (data[currentrow].URL);
+			infoboximage.setAttribute("onclick", "openthis('" + data[currentrow].Type + "')");
+			infoboximage.style.cursor = "pointer";
+			infoboximage.parentElement.setAttribute("class", "extraroom");
+			document.getElementById("extra").style.display = "block"; }
 		
-	else if (data[currentrow].Type === "iframe") {
-		//console.log("iframetime");
-		document.getElementById("getridofme2").style.display = "block"; //Will turn back to none after loading.
-		thisImageGetsReferenced16Times.style.display = "none";
-		thisImageGetsReferenced16Times.src = "";
-		thisImageGetsReferenced16Times.removeAttribute("onclick");
-		thisImageGetsReferenced16Times.style.cursor = "";
-		document.getElementById("iframeouter").style.display = "flex";
-		document.getElementById("iframeA").src = (data[currentrow].URL);
-		thisImageGetsReferenced16Times.parentElement.removeAttribute("class");
-		document.getElementById("extra").style.display = "none"; }
-		
-	else { // When the Type column contains something else, like a URL, link to it:
-		//console.log("clickabletime");
-		document.getElementById("iframeouter").style.display = "none";
-		document.getElementById("iframeA").src = "";
-		thisImageGetsReferenced16Times.style.display = "block";
-		thisImageGetsReferenced16Times.src = (data[currentrow].URL);
-		thisImageGetsReferenced16Times.setAttribute("onclick", "openthis('" + data[currentrow].Type + "')");
-		thisImageGetsReferenced16Times.style.cursor = "pointer";
-		thisImageGetsReferenced16Times.parentElement.setAttribute("class", "extraroom");
-		document.getElementById("extra").style.display = "block"; }
-	
-	moveit();
-	hidenavbuttons();
+		moveit();
+		hidenavbuttons();
 	}
 	
 	cachedsearch = searchstring;

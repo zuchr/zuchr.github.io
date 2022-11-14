@@ -62,6 +62,7 @@ body {
 button { /* Overriding default button styles */
 	border: none;
 	font: inherit;
+	margin: inherit;
 }
 
 #backhomebutton {

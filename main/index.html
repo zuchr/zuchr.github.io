@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>Bobby Zuch! 😎</title>
+<title>Main Gallery - Bobby Zuch!</title>
 
 <meta property="og:title" content="Bobby Zuch!" />
 <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 5px;
-		max-width: 600px;
+		max-width: 555px; /* Formerly 600px. */
 	}
 	
 	.filter {
@@ -73,13 +73,37 @@
 		font-family: 'RobotoCBI';
 	}
 	
-	::placeholder { color: white; }
+	::placeholder { color: white; } /* For search text. */
 	
 	#toprow {
 		width: 100%;
 		padding-bottom: 10px;
 		margin-bottom: 5px;
 		border-bottom: solid var(--raisin-black) 4px;
+	}
+	
+	.yearlydivider {
+		position: relative;
+		display: block;
+		padding: 0 30px;
+		margin-bottom: 10px;
+		width: calc(100% - 60px);
+		font-family: 'RobotoCBI';
+		color: var(--davys-gray);
+		font-size: 42px;
+	}
+
+	.yearlydivider:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--raisin-black);
+		transform-origin: 0 50%;
+		transform: skew(-45deg);
+		z-index: -1;
 	}
 
 </style>

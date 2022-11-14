@@ -43,8 +43,8 @@ function closeit() {
 }
 
 function about() { //Hardcoded entry exclusively for the "ABOUT" button.
-	let thisImageGetsReferenced16Times = document.getElementById("image");
-	thisImageGetsReferenced16Times.src = "https://cdn.discordapp.com/attachments/901206407695728660/919078708336271421/f39f1b_f8c96e98a63e4677bd0d251531026005mv2.png";
+	let infoboximage = document.getElementById("image");
+	infoboximage.src = "https://cdn.discordapp.com/attachments/901206407695728660/919078708336271421/f39f1b_f8c96e98a63e4677bd0d251531026005mv2.png";
 	document.getElementById("title").innerHTML = "Hello & Welcome!";
 	document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + "Site launched September 26th, 2022";
 	document.getElementById("desc").innerHTML = "Welcome to my portfolio website! It's great to have you here. Included on this page is a sampling of some of my proudest and most recent works.<br><br>If you're an interested employer (or if you know a guy), <a href='../resume.pdf' target='_blank'>here is the latest version of my resume</a>.";
@@ -59,10 +59,10 @@ function about() { //Hardcoded entry exclusively for the "ABOUT" button.
 	if ( document.getElementById("iframeouter")) {
 		document.getElementById("iframeouter").style.display = "none";
 		document.getElementById("iframeA").src = "";
-		thisImageGetsReferenced16Times.style.display = "block";
-		thisImageGetsReferenced16Times.removeAttribute("onclick");
-		thisImageGetsReferenced16Times.style.cursor = "";
-		thisImageGetsReferenced16Times.parentElement.removeAttribute("class");
+		infoboximage.style.display = "block";
+		infoboximage.removeAttribute("onclick");
+		infoboximage.style.cursor = "";
+		infoboximage.parentElement.removeAttribute("class");
 		document.getElementById("extra").style.display = "none";
 	}
 	
