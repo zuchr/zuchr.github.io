@@ -7,10 +7,12 @@ function moveit() {
 	document.getElementById("grayback").style.display = "initial";
 	document.getElementById("closeX").style.display = "initial";
 	
+	//Only when on the main gallery:
 	let filtersdiv = document.getElementById('filters');
 	if (filtersdiv !== null) {
 		filtersdiv.setAttribute("inert", "");
 		gallery.setAttribute("inert", "");
+		document.getElementById("controlbuttons").setAttribute("inert", "");
 	}
 }
 
@@ -25,10 +27,12 @@ function moveitout() {
 		document.getElementById("closeX").style.display = "none";
 	}
 	
+	//Only when on the main gallery:
 	let filtersdiv = document.getElementById('filters');
 	if (filtersdiv !== null) {
 		filtersdiv.removeAttribute("inert");
 		gallery.removeAttribute("inert");
+		document.getElementById("controlbuttons").removeAttribute("inert");
 	}
 }
 
