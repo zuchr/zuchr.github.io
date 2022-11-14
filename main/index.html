@@ -338,10 +338,10 @@ function changesetting(value) {
 	//Option 2 - Reduce motion.
 	//Changes universal media rule.
 	else if (value == 2) { //Changes the media rule to always be active:
-		document.styleSheets[1].cssRules[4].conditionText = "(max-width: 100000px)";
+		document.styleSheets[1].cssRules[3].conditionText = "(max-width: 100000px)";
 	}
 	else if (value == -2) { //Changes the media rule back to normal:
-		document.styleSheets[1].cssRules[4].conditionText = "(prefers-reduced-motion: reduce)";
+		document.styleSheets[1].cssRules[3].conditionText = "(prefers-reduced-motion: reduce)";
 	}
 	
 	
