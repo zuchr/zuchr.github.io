@@ -87,7 +87,7 @@
 		display: block;
 		padding: 0 30px;
 		margin-bottom: 10px;
-		width: calc(100% - 60px);
+		width: calc(90% - 60px);
 		font-family: 'RobotoCBI';
 		color: var(--davys-gray);
 		font-size: 42px;
@@ -105,6 +105,33 @@
 		transform: skew(-45deg);
 		z-index: -1;
 	}
+	
+	#controlbuttons {
+		position: fixed;
+		bottom: 2px;
+		left: 2px;
+		display: flex;
+		gap: 5px;
+	}
+	
+	#controlbuttons > button {
+		width: 50px;
+		height: 50px;
+		background-size: 70% 70%;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+		border: solid var(--raisin-black) 5px;
+		border-radius: 10px;
+		background-color: var(--pacific-blue);
+		opacity: 50%;
+	}
+	
+	#controlbuttons > button:hover, #controlbuttons > button:focus { filter: brightness(1.1); opacity: 100%; }
+	
+	#controlbuttons > button:active { filter: brightness(0.9); opacity: 100%; }
+	
+	#optionbtn1 { background-image: url(../homesvg/settings_yearly.svg); }
 
 </style>
 </head>
@@ -199,6 +226,12 @@
 	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
 	</div>
 </div>
+
+<div id="controlbuttons">
+	<button id="optionbtn1" onclick="changesetting(1)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button>
+	<!--button id="optionbtn2" onclick="changesetting(2)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button>
+	<button id="optionbtn3" onclick="changesetting(3)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button-->
+</div>
 	
 </body>
 
@@ -265,6 +298,41 @@ function getfromsearch() {
 			}
 		//}
 	}
+}
+
+//Options buttons:
+function changesetting(value) {
+	//Gets the button but the last digit of the value, ignoring "-".
+	let button = document.getElementById("optionbtn" + value.toString().slice(-1));
+	
+	//Option 1 - Yearly dividers:
+	if (value == 1) {
+		document.styleSheets[2].cssRules[9].style.display = "none";
+	}
+	else if (value == -1) {
+		document.styleSheets[2].cssRules[9].style.display = "block";
+	}
+	//Option 2 - NULL:
+	else if (value == 2) {
+		
+	}
+	else if (value == -2) {
+		
+	}
+	
+	//Positive/negative dependant changes:
+	if (value > 0) {
+		//button.style.backgroundColor = "var(--emerald-green)";
+		button.style.opacity = "0.75";
+	}
+	else {
+		//button.style.backgroundColor = "";
+		button.style.opacity = "";
+	}
+	
+	//Universal changes:
+	button.setAttribute("onclick", "changesetting(" + (value - value*2) + ")");
+	button.blur(); //Removes the focus from the button.
 }
 
 </script>
