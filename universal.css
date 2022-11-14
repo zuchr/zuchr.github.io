@@ -35,6 +35,14 @@ var(--accessibility-color)
 	src: url(./fonts/RobotoCondensed-BoldItalic.ttf);
 }
 
+/* Accessibility: */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
 /* Links: */
 
 a { color: var(--pacific-blue); transition: color .25s; text-decoration: none; }

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="31.5" viewBox="0 0 32 31.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-5 {
+        fill: #242122;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #242122;
+        stroke-miterlimit: 10;
+        stroke-width: 0.64px;
+      }
+
+      .cls-2 {
+        opacity: 0.25;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 1.78 1.78;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <circle class="cls-1" cx="26.02" cy="25.52" r="5.66"/>
+      <circle class="cls-2" cx="5.98" cy="25.52" r="5.66"/>
+      <circle class="cls-3" cx="16.02" cy="25.52" r="5.66"/>
+      <circle class="cls-4" cx="5.98" cy="25.52" r="5.66"/>
+      <polygon class="cls-5" points="7.25 0 7.25 16.74 21.12 8.37 7.25 0"/>
+      <rect class="cls-5" x="21.12" width="3.67" height="16.74"/>
+    </g>
+  </g>
+</svg>
