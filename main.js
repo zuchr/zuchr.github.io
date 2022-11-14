@@ -32,6 +32,10 @@ function narrowdata() {
 	
 	//data = dataOG;
 	
+	//Resets the yearly divider toggle button:
+	document.getElementById("optionbtn1").style.backgroundColor = "";
+	document.getElementById("optionbtn1").removeAttribute("disabled");
+	
 	if ( found == 1 && anysearches == 1 && searchstring !== '' && searchstring !== 'All' && searchstring !== 'Featured' ) {
 		// If it's one of the buttons and a non-empty search was performed...
 		//console.log("glung");
@@ -42,7 +46,11 @@ function narrowdata() {
 		}
 	}
 	else if ( searchstring === 'Featured' ) {
-		//console.log("granngle");
+		//Disable the yearly divider toggle button:
+		document.getElementById("optionbtn1").style.backgroundColor = "var(--davys-gray)";
+		document.getElementById("optionbtn1").setAttribute("disabled", "");
+		
+		//Push Featured content:
 		for (let i = 0; i <= (dataOG.length - 1); i++) {
 			for (let o = 0; o <= (dataOG.length - 1); o++) {
 				if ( dataOG[o].Featured == [i + 1] ) {
