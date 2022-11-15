@@ -142,6 +142,7 @@ function loadfromhash() { //Performs actions based around the number of the hash
 	//Infobox populating code below:
 	if (hashname != "") { // Removes error message on blank initial load.
 		let infoboximage = document.getElementById("image");
+		let videoframe = document.getElementById("videoframe");
 		infoboximage.src = ""; //Quickly clear the last image before it slides in.
 		document.getElementById("title").innerHTML = (data[currentrow].Title);
 		document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + (data[currentrow].Date);
@@ -151,39 +152,48 @@ function loadfromhash() { //Performs actions based around the number of the hash
 		document.getElementById("software").innerHTML = "<b>Software:</b> " + (data[currentrow].Software);
 		document.getElementById("client").innerHTML = (data[currentrow].Client);
 		document.getElementById("category").innerHTML = (data[currentrow].Category).replace(/-/g, " ").replace(/\+/g, " & ");
+		
+		//Clearing all content before declaring what type is displayed:
+		infoboximage.style.display = "none";
+		document.getElementById("iframeouter").style.display = "none";
+		document.getElementById("iframeA").src = "";
+		videoframe.style.display = "none";
+		infoboximage.removeAttribute("onclick");
+		infoboximage.style.cursor = "";
+		infoboximage.parentElement.removeAttribute("class");
+		document.getElementById("extra").style.display = "none"; 
+		
+		//Looking at Type to determine how the content displays:
 		if (data[currentrow].Type === "img") {
 			//console.log("imgtime");
-			document.getElementById("iframeouter").style.display = "none";
-			document.getElementById("iframeA").src = "";
 			infoboximage.style.display = "block";
 			infoboximage.src = (data[currentrow].URL);
-			infoboximage.removeAttribute("onclick");
-			infoboximage.style.cursor = "";
-			infoboximage.parentElement.removeAttribute("class");
-			document.getElementById("extra").style.display = "none"; }
-			
+		}	
 		else if (data[currentrow].Type === "iframe") {
 			//console.log("iframetime");
 			document.getElementById("getridofme2").style.display = "block"; //Will turn back to none after loading.
-			infoboximage.style.display = "none";
-			infoboximage.src = "";
-			infoboximage.removeAttribute("onclick");
-			infoboximage.style.cursor = "";
 			document.getElementById("iframeouter").style.display = "flex";
 			document.getElementById("iframeA").src = (data[currentrow].URL);
-			infoboximage.parentElement.removeAttribute("class");
-			document.getElementById("extra").style.display = "none"; }
-			
+		}
+		else if (data[currentrow].Type === "video") {
+			//console.log("videotime");
+			videoframe.style.display = "block";
+			//videoframe.pause();
+			videoframe.children[0].src = "../iframes/videos/" + data[currentrow].URL + ".mp4";
+			videoframe.children[1].src = "../iframes/videos/" + data[currentrow].URL + ".webm";
+			videoframe.children[2].src = "../iframes/videos/" + data[currentrow].URL + ".gif"; 
+			videoframe.load();
+			//videoframe.play();
+		}
 		else { // When the Type column contains something else, like a URL, link to it:
 			//console.log("clickabletime");
-			document.getElementById("iframeouter").style.display = "none";
-			document.getElementById("iframeA").src = "";
 			infoboximage.style.display = "block";
 			infoboximage.src = (data[currentrow].URL);
 			infoboximage.setAttribute("onclick", "openthis('" + data[currentrow].Type + "')");
 			infoboximage.style.cursor = "pointer";
 			infoboximage.parentElement.setAttribute("class", "extraroom");
-			document.getElementById("extra").style.display = "block"; }
+			document.getElementById("extra").style.display = "block";
+		}
 		
 		moveit();
 		hidenavbuttons();
