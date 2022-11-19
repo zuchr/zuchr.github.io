@@ -54,7 +54,7 @@ a:active { color: var(--emerald-green); }
 
 /* Text: */
 
-h2 { font-family: RobotoCBI, monospace; color: var(--raisin-black); font-weight: normal; }
+h2, #header a { font-family: RobotoCBI, monospace; color: var(--raisin-black); font-weight: normal; font-size: 1.5em; }
 p, span { font-family: Roboto, sans-serif; color: var(--white); font-size: 11pt; }
 h1, #title { font-family: HelveticaRB, sans-serif;  color: var(--white); letter-spacing: 0pt; font-size: 30pt; font-weight: normal; }
 #unified p, #unified span { font-size: 11.75pt; }
@@ -122,9 +122,13 @@ button { /* Overriding default button styles */
 	pointer-events: auto;
 }
 
-#anchortext > a > h2 {
+#header a /*> h2*/ {
 	transition: color .25s;
 	pointer-events: auto;
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
 }
 
 #header {
@@ -167,7 +171,7 @@ button { /* Overriding default button styles */
 	left: 264px;
 	top: 15px;
 	transform: skewY(-9deg) skewX(-6.75deg);
-	font-size: 32pt;
+	font-size: 32pt !important;
 	transition: color .5s;
 	pointer-events: auto;
 }
@@ -177,13 +181,14 @@ button { /* Overriding default button styles */
 	left: 395px;
 	top: 9px;
 	transform: skewY(-9deg) skewX(-6.75deg);
-	font-size: 26pt;
+	font-size: 26pt !important;
 	transition: color .5s;
 	pointer-events: auto;
 }
 
-#htext1:hover, #htext2:hover, #hlogo > img:hover, #anchortext > a > h2:hover {
-	color: white;
+#htext1:hover, #htext2:hover, #hlogo > img:hover, #anchortext > a:hover,
+#htext1:focus, #htext2:focus, #hlogo > img:focus, #anchortext > a:focus {
+	color: white !important;
 	cursor: pointer;
 }
 
@@ -268,16 +273,17 @@ button { /* Overriding default button styles */
 	background-color: var(--davys-gray);
 	border-radius: 25px;
 	border: solid var(--raisin-black) 10px;
-	transition: border .5s, background-color .25s, transform .25s;
+	transition: background-color .25s/*, border .5s, transform .25s, */;
 	animation: widen2 .5s linear forwards;
 	cursor: pointer;
 }
 
-.imageside:hover {
-	transform: scale(1.5);
+.imageside:hover, .imageside:focus {
+	/*transform: scale(1.5);
 	background-color: transparent;
 	border: transparent var(--raisin-black) 0px;
-	animation: widen1 .5s linear forwards;
+	animation: widen1 .5s linear forwards;*/
+	background-color: var(--white);
 }
 
 .imageside img {
@@ -285,12 +291,12 @@ button { /* Overriding default button styles */
 	max-height: 100%;
 	object-fit: contain;
 	border-radius: 15px;
-	transition: border-radius .25s;
+	/*transition: border-radius .25s;*/
 }
 
-.imageside img:hover {
+/*.imageside img:hover, .imageside img:focus {
 	border-radius: 1px;
-}
+}*/
 
 .imagesidehoverless {
 	margin: 0;
@@ -309,7 +315,7 @@ button { /* Overriding default button styles */
 	transition: filter .25s;
 }
 
-.imagesidehoverless img:hover {
+.imagesidehoverless img:hover, .imagesidehoverless img:focus {
 	filter: brightness(1.5);
 }
 
@@ -495,8 +501,8 @@ button { /* Overriding default button styles */
 
 .closeXhidden { opacity: 0; cursor: default; }
 
-.closeX:hover {
-    background-color: #363132;
+.closeX:hover, .closeX:focus {
+    background-color: #363132 !important;
 }
 
 .section {
@@ -576,7 +582,7 @@ button { /* Overriding default button styles */
 	color: var(--emerald-green);
 }
 
-.lookatme, .lookatme:hover, .lookatme:active, .lookatme:active { color: var(--orange-accent); }
+.lookatme, .lookatme:hover, .lookatme:focus, .lookatme:active { color: var(--orange-accent); }
 
 .extraroom {
 	padding-top: 20px;

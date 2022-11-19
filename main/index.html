@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
 <link rel="stylesheet" href="../style.css?v=1.2" type="text/css">
-<link rel="stylesheet" href="../universal.css?v=1.2" type="text/css">
+<link rel="stylesheet" href="../universal.css?v=1.3" type="text/css">
 <script src="../main.js"></script>
 <script src="../java_half.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -157,6 +157,14 @@
 </style>
 </head>
 <body onload="loaddata()", onhashchange="loadfromhash()">
+
+<div id="header">
+	<div id="hback"><img src="../corner_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".." id="htext1" onclick="closeit()">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
+	</div>
+</div>
+
 <div id="blanktop">
 <div class="featuredsection">
 <br><h1>Main Gallery</h1>
@@ -187,7 +195,7 @@
 <br>
 </div>
 
-<!-- HEADER & ABOUT PORTION -->
+<!-- ABOUT PORTION -->
 
 <div id="backborder">
 <div id="infobox">
@@ -244,14 +252,6 @@
 		<noscript><h1 style="text-align: center">This page needs Javascript<br>enabled to function properly.</h1></noscript>
 	</div>
 	<div id="rightwall"></div>
-</div>
-
-
-<div id="header">
-	<div id="hback"><img src="../corner_new.svg"></div>
-	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
-	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
-	</div>
 </div>
 
 <div id="controlbuttons">

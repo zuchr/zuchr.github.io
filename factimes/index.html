@@ -5,7 +5,7 @@
 <title>The Factory Times - Bobby Zuch! 😎</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="stylesheet" href="../universal.css" type="text/css">
+<link rel="stylesheet" href="../universal.css?v=1.3" type="text/css">
 <script src="../java_half.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -40,6 +40,17 @@
 </style>
 </head>
 <body>
+
+<div id="header">
+	<div id="hback"><img src="../corner_anchors_new.svg"></div>
+	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href=".." id="htext1" onclick="closeit()">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
+	<div id="anchortext">
+	<a href="#top">Top</a>
+	<a href="#articles">Featured Articles</a>
+	<a href="#whiteboard">Whiteboard Polls</a>
+	</div>
+</div>
 
 <div id="corecontent">
 
@@ -204,7 +215,7 @@ Near the end of my sophomore semester, I was asked if I wanted to take over the 
 
 </div>
 
-<!-- HEADER & ABOUT PORTION -->
+<!-- ABOUT PORTION -->
 
 <div id="backborder">
 <div id="infobox">
@@ -236,17 +247,6 @@ Near the end of my sophomore semester, I was asked if I wanted to take over the 
 
 <div id="grayback" onclick="closeit()">
 	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
-</div>
-
-<div id="header">
-	<div id="hback"><img src="../corner_anchors_new.svg"></div>
-	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
-	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
-	<div id="anchortext">
-	<a href="#top"><h2>Top</h2></a>
-	<a href="#articles"><h2>Featured Articles</h2></a>
-	<a href="#whiteboard"><h2>Whiteboard Polls</h2></a>
-	</div>
 </div>
 
 </body>
