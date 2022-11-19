@@ -28,13 +28,14 @@
 	color: var(--white);
 	font-family: Roboto;
 	border-radius: 25px 25px 25px 5px;
-	box-shadow: 0px 7px 7px 4px var(--raisin-black);
+	/*box-shadow: 0px 7px 7px 4px var(--raisin-black);*/
+	box-shadow: 0px 7px 7px 4px #0009;
 	transition: box-shadow .25s, transform .25s;
 	margin: 10px 5px;
 	transform-origin: center;
 }
 
-.bigbox:hover, .bigbox:focus {
+/*.bigbox:hover, .bigbox:focus,*/ a:focus > .bigbox, a:hover > .bigbox {
 	box-shadow: 0px 0px 0px 5px var(--emerald-green);
 	transform: scale(1.05);
 	cursor: pointer;	
@@ -100,7 +101,7 @@
 
 .quickbio {
 	margin: -7.5px 0px;
-	width: 211px;
+	width: 213px;
 	height: 38px;
 }
 
@@ -128,10 +129,12 @@ h4, h5 {
 h5 { margin-top: -6px; font-size: 8pt; }
 
 #BGgear, #BGgear2 {
-	position: absolute;
+	position: fixed;
 	object-fit: cover;
 	z-index: -1;
+	overflow: hidden;
 }
+
 #BGgear {
 	left: -200px;
 	bottom: 0;
@@ -141,12 +144,11 @@ h5 { margin-top: -6px; font-size: 8pt; }
 }
 
 #BGgear2 {
-	right: -200px;
+	right: 0px;
 	top: -200px;
 	height: 370px;
-	width: 400px;
-	object-position: bottom;
-	object-fit: cover;
+	width: 200px;
+	object-position: bottom left;
 }
 
 #bg {
@@ -162,8 +164,6 @@ h5 { margin-top: -6px; font-size: 8pt; }
 	.galleryprojects > a { transform: skewY(-9deg); }
 	#bg { display: block; }
 	#fg { margin-top: -300px; }
-	
-	.bigbox { box-shadow: 0px 7px 7px 4px #0009; }
 }
 
 @media (max-width: 563px) {

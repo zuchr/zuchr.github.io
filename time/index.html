@@ -72,7 +72,7 @@ While I was working on this, I was taking a course by the same professor to lear
 <div class="displayflexer">
 	
 	<div class="widedisplay">
-		<div class="imagesidehoverless">
+		<div class="imageside imagesidehoverless">
 			<a href="https://magazineproject.org/sandbox/" target="_blank">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118274962133022/unknown.png">
 			</a>
@@ -92,7 +92,7 @@ While I was working on this, I was taking a course by the same professor to lear
 			</h2>
 			<p>This page was tough to make. On top of having to work off of someone else's chart-creation code, I didn't fully understand the D3 Javascript library yet, so it was a struggle to get this to display as I intended. But with enough time, I made it there. The responsive checkbox layouts were also a huge undertaking for me at the time.<br>Click the image or title to interact with the page.</p>
 		</div>
-		<div class="imagesidehoverless">
+		<div class="imageside imagesidehoverless">
 			<a href="https://magazineproject.org/sandbox/trendlines/" target="_blank">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118591833411615/unknown.png">
 			</a>
@@ -100,7 +100,7 @@ While I was working on this, I was taking a course by the same professor to lear
 	</div>
 	
 	<div class="widedisplay">
-		<div class="imagesidehoverless">
+		<div class="imageside imagesidehoverless">
 			<a href="https://magazineproject.org/sandbox/Composite_Year/" target="_blank">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118747618259064/unknown.png">
 			</a>
@@ -120,7 +120,7 @@ While I was working on this, I was taking a course by the same professor to lear
 			</h2>
 			<p>This page will display content from three different spreadsheets, and display them based on the period of time selected, and the types of events selected. For now, I filled some empty spreadsheets with different song lyrics. When I finally got everything to work with each other, I practically jumped for joy.<br><a name="code"></a>Click the image or title to interact with the page.</p>
 		</div>
-		<div class="imagesidehoverless">
+		<div class="imageside imagesidehoverless">
 			<a href="https://magazineproject.org/sandbox/historical_timeline/" target="_blank">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971118568131420261/unknown.png">
 			</a>
@@ -137,9 +137,9 @@ While I was working on this, I was taking a course by the same professor to lear
 <div class="displayflexer">
 	
 	<div class="widedisplay">
-		<div class="imageside">
+		<a class="imageside imagesidehoverless scriptme" href="javascript:;">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971173561182081054/unknown.png">
-		</div>
+		</a>
 		<div class="widetextside">
 			<h2>
 			Code Example 1
@@ -155,9 +155,9 @@ While I was working on this, I was taking a course by the same professor to lear
 			</h2>
 			<p>Continuing off of the previous code sample, this is where the information itself gets loaded into the containers set up prior. It loads each spreadsheet into a different set of data, which all get added to the screen depending on which filters are checked by the user. It does this for each selected month in the selected year, and skips any empty cells of information.
 		</div>
-		<div class="imageside">
+		<a class="imageside imagesidehoverless scriptme" href="javascript:;">
 			<img src="https://cdn.discordapp.com/attachments/901206407695728660/971137002059759736/unknown.png">
-		</div>
+		</a>
 	</div>
 	
 </div>
@@ -201,7 +201,7 @@ While I was working on this, I was taking a course by the same professor to lear
 </div>
 
 <div id="grayback" onclick="closeit()">
-	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+	<button id="closeX2" onclick="closeit()"><h1>X</h1></button>
 </div>
 
 </body>
@@ -233,26 +233,27 @@ const resizeObserver = new ResizeObserver(entries =>
 resizeObserver.observe(document.body)
 
 // HOVER TO FRONT: //
-var imgdisplays = document.getElementsByClassName("imageside");
+var imgdisplays = document.getElementsByClassName("scriptme");
 
 for (var u = 0; u < imgdisplays.length; u++) {
-	imgdisplays[u].setAttribute("onmouseover", "bringforward(this.parentElement)");
-	imgdisplays[u].setAttribute("onmouseout", "bringback(this.parentElement)");
+	//imgdisplays[u].setAttribute("onmouseover", "bringforward(this.parentElement)");
+	//imgdisplays[u].setAttribute("onmouseout", "bringback(this.parentElement)");
 	imgdisplays[u].setAttribute("onclick", "focusme(this.children)");
 }
 	
-function bringforward(parent) {
+/*function bringforward(parent) {
 	parent.style.zIndex = 1;
 }
 function bringback(parent) {
 	parent.removeAttribute("style");
-}
+}*/
 
 function focusme(child) {
 	var grayback = document.getElementById("grayback");
 	var closeX2 = document.getElementById("closeX2");
 	grayback.style.display = "flex";
 	closeX2.style.display = "block";
+	closeX2.focus();
 	
 	var copy = child[0].cloneNode(true);
 	
@@ -260,6 +261,9 @@ function focusme(child) {
 	grayback.appendChild(newelement);
 	newelement.setAttribute("id", "focus");
 	newelement.appendChild(copy);
+	
+	//child[0].parentElement.blur() // Unneeded due to this:
+	document.getElementById("corecontent").setAttribute("inert", "");
 }
 
 </script>

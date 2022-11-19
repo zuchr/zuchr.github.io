@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: transparent !important;
+	overflow: hidden;
+}
+
+.galleryprojects { transform: skewY(9deg); }
+.galleryprojects > a { transform: skewY(-9deg); }
+#bg { display: block; }
+#fg { margin-top: -300px; }
+a { margin: unset; }
+
+#BGgear { height: 185px; width: 400px; }
+/*#BGgear2 { top: -150px; height: 277.5px; width: 150px; }*/
+
+@media (max-height: 499px) or (max-width: 499px) {
+	#BGgear, #BGgear2 { opacity: 50%; }
+}
+
+@media (max-height: 333px) {
+	.galleryprojects > a {
+		transform: skewY(-9deg) scale(0.75);
+		transform-origin: center 60%;
+	}
+	#bg { opacity: 0; }
+}

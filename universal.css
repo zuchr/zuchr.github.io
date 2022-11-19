@@ -283,7 +283,9 @@ button { /* Overriding default button styles */
 	background-color: transparent;
 	border: transparent var(--raisin-black) 0px;
 	animation: widen1 .5s linear forwards;*/
-	background-color: var(--white);
+	/*background-color: var(--white);*/
+	background: linear-gradient(to bottom, #21ACCC33 0%, #1DCC6D33 100%);
+	background-color: hsl(191deg 42% 86%);
 }
 
 .imageside img {

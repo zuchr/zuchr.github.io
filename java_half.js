@@ -14,6 +14,10 @@ function moveit() {
 		gallery.setAttribute("inert", "");
 		document.getElementById("controlbuttons").setAttribute("inert", "");
 	}
+	//Only when on the other pages:
+	else {
+		document.getElementById("corecontent").setAttribute("inert", "");
+	}
 }
 
 function moveitout() {
@@ -33,6 +37,10 @@ function moveitout() {
 		filtersdiv.removeAttribute("inert");
 		gallery.removeAttribute("inert");
 		document.getElementById("controlbuttons").removeAttribute("inert");
+	}
+	//Only when on the other pages:
+	else {
+		document.getElementById("corecontent").removeAttribute("inert");
 	}
 }
 
@@ -78,8 +86,14 @@ function galleryclose() {
 	let grayback = document.getElementById("grayback");
 	let closeX2 = document.getElementById("closeX2");
 	grayback.style.display = "none";
-	grayback.innerHTML = ("<div id='closeX2' onclick='closeit()'><h1>X</h1></div>");
+	grayback.innerHTML = ("<button id='closeX2' onclick='closeit()'><h1>X</h1></button>");
 	closeX2.style.display = "none";
+	
+	//Only when NOT on the main gallery:
+	let filtersdiv = document.getElementById('filters');
+	if (filtersdiv == null) {
+		document.getElementById("corecontent").removeAttribute("inert");
+	}
 }
 
 let touchstartX = 0;
