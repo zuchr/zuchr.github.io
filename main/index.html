@@ -153,6 +153,11 @@
 	#controlbuttons img { height: 80%; }
 	
 	#controlbuttons h2 { font-size: 11pt; text-align: left; min-width: 100px; margin: 0; }
+	#controlbuttons > h2 { color: var(--pacific-blue); margin-left: 3px; opacity: .65; }
+	
+	@media (min-width: 1100px) {
+		#controlbuttons > h2 { opacity: 1; }
+	}
 
 </style>
 </head>
@@ -163,6 +168,21 @@
 	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
 	<div id="htext"><a href=".." id="htext1" onclick="closeit()">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
 	</div>
+</div>
+
+<div id="controlbuttons">
+	<h2>Options</h2>
+	
+	<button id="optionbtn1" onclick="changesetting(1)" title="Toggle yearly dividers (Not available on Featured Works!)">
+		<img src="../homesvg/settings_yearly.svg" alt="Yearly divider icon">
+		<h2>Toggle yearly dividers</h2>
+	</button>
+	<button id="optionbtn2" onclick="changesetting(2)" title="Toggle reduced motion">
+		<img src="../homesvg/settings_reducedmotion2.svg" alt="Reduced motion icon">
+		<h2>Toggle reduced motion</h2>
+	</button>
+	<!--button id="optionbtn2" onclick="changesetting(2)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button>
+	<button id="optionbtn3" onclick="changesetting(3)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button-->
 </div>
 
 <div id="blanktop">
@@ -252,21 +272,6 @@
 		<noscript><h1 style="text-align: center">This page needs Javascript<br>enabled to function properly.</h1></noscript>
 	</div>
 	<div id="rightwall"></div>
-</div>
-
-<div id="controlbuttons">
-	<h2 style="color: var(--pacific-blue); margin-left: 3px; opacity: .65;">Options</h2>
-	
-	<button id="optionbtn1" onclick="changesetting(1)" title="Toggle yearly dividers">
-		<img src="../homesvg/settings_yearly.svg" alt="Yearly divider icon">
-		<h2>Toggle yearly dividers</h2>
-	</button>
-	<button id="optionbtn2" onclick="changesetting(2)" title="Toggle reduced motion">
-		<img src="../homesvg/settings_reducedmotion2.svg" alt="Reduced motion icon">
-		<h2>Toggle reduced motion</h2>
-	</button>
-	<!--button id="optionbtn2" onclick="changesetting(2)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button>
-	<button id="optionbtn3" onclick="changesetting(3)" title="Toggle yearly dividers" alt="Toggle yearly dividers"></button-->
 </div>
 	
 </body>
