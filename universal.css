@@ -582,6 +582,7 @@ button { /* Overriding default button styles */
 	font-family: HelveticaRB;
 	display: none;
 	color: var(--emerald-green);
+	width: calc(100% - 130px);
 }
 
 .lookatme, .lookatme:hover, .lookatme:focus, .lookatme:active { color: var(--orange-accent); }
@@ -687,7 +688,7 @@ button { /* Overriding default button styles */
 	}
 	#infobox { max-height: 100vh; } /*Added after #backborder's scale transform.*/
 	
-	#imgdisplay { padding-bottom: 23px; width: 100%; }
+	#imgdisplay { padding-bottom: 23px; width: 100%; margin-top: 20px; }
 	.extraroom { padding-top: 23px; }
 	.sectionlight { display: flex; justify-content: center; }
 	.sectionlight > p { font-size: 10pt; bottom: -12px; }

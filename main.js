@@ -123,17 +123,20 @@ function loadfromhash() { //Performs actions based around the number of the hash
 				let d = document.createElement("DIV");
 				d.setAttribute("class", "yearlydivider");
 				d.innerHTML = cachedyear;
+				if (i == 0) { d.setAttribute("style", "margin-top: 0"); }
 				gallery.appendChild(d);
 			}
 			
 			//Populate thumbnails:
+			let a = document.createElement("a");
 			let x = document.createElement("IMG");
-			x.setAttribute("id", "imgnum" + i);
-			x.setAttribute("onclick", "makehash('" + data[i].Permahash + "')");
+			a.setAttribute("id", "imgnum" + i);
+			if ( anysearches == 0 ) { a.setAttribute("href", "#" + data[i].Permahash); }
+			else { a.setAttribute("href", "#" + data[i].Permahash + '?' + searchstring); }
 			x.setAttribute("alt", data[i].Title);
 			x.setAttribute("title", data[i].Title); //Tooltip
 			x.setAttribute("src", data[i].Thumb);
-			gallery.appendChild(x);
+			gallery.appendChild(a); a.appendChild(x);
 		}
 		filled = 1;
 		document.getElementById("getridofme").style.display = "none"; //Hides the loading text.
@@ -193,6 +196,7 @@ function loadfromhash() { //Performs actions based around the number of the hash
 			infoboximage.style.cursor = "pointer";
 			infoboximage.parentElement.setAttribute("class", "extraroom");
 			document.getElementById("extra").style.display = "block";
+			document.getElementById("extra").innerHTML = "(Click the image <a href='" + data[currentrow].Type + "' target='_blank'>or this text</a> to play it in a new window)";
 		}
 		
 		moveit();
@@ -210,6 +214,7 @@ document.addEventListener('keydown', function(event) {
 		switch (event.key) {
 			case "ArrowLeft": nextprev(0); break;
 			case "ArrowRight": nextprev(1); break;
+			case "Escape": closeit(); break;
 		}
 	}
 });

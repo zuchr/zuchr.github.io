@@ -9,17 +9,17 @@
 	margin-bottom: 70px;
 }
 
-#gallery > img {
+#gallery > a > img {
 	height: 150px;
 	background-color: var(--raisin-black);
 	border-radius: 25px;
 	padding: 10px;
-	margin: 5px;
+	margin: 5px 5px 0 5px;
 	transition: background-color .5s, height .25s;
+	cursor: pointer;
 }
 
-#gallery > img:hover {
-	cursor: pointer;
+#gallery > a:hover > img, #gallery > a:focus > img {
 	background-color: white;
 }
 

@@ -78,6 +78,13 @@ function about() { //Hardcoded entry exclusively for the "ABOUT" button.
 		document.getElementById("extra").style.display = "none";
 	}
 	
+	//Checks if the current page is Main Gallery:
+	let filtersdiv = document.getElementById('filters');
+	if (filtersdiv !== null) {
+		document.getElementById("leftbutton").setAttribute("class", "closeXhidden");
+		document.getElementById("rightbutton").setAttribute("class", "closeXhidden");
+	}
+	
 	closeit();
 	moveit();
 }
