@@ -691,7 +691,7 @@ button { /* Overriding default button styles */
 #controlbuttons img { height: 80%; }
 
 #controlbuttons h2 { font-size: 11pt; text-align: left; min-width: 100px; margin: 0; }
-#controlbuttons > h2 { color: var(--pacific-blue); margin-left: 3px; }
+#controlbuttons > h2 { color: var(--pacific-blue); margin-left: 3px; min-width: unset; }
 
 @keyframes shift {
 	0% {right: -100%;}
