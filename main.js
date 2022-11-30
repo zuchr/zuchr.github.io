@@ -66,19 +66,23 @@ function narrowdata() {
 
 		//let searchableColumns = ["Title", "Info", "Difficulties", "Skills", "Software", "Client", "Category", "Permahash"];
 		
+		//Splits the search by commas, allowing multiple searches at once.
+		let commaseparatedSearch = searchstring.toLowerCase().replace(/%20/g, ' ').split(", "); //(If no commas, becomes array with length of 0.)
 		for (let i = 0; i <= (dataOG.length - 1); i++) {
+			for (let splitnum = 0; splitnum < commaseparatedSearch.length; splitnum++) {
 				if (
-					dataOG[i].Title.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Info.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Difficulties.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Skills.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Software.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Client.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Category.toLowerCase().includes(searchstring.toLowerCase()) ||
-					dataOG[i].Permahash.toLowerCase().includes(searchstring.toLowerCase())
+					dataOG[i].Title.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Info.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Difficulties.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Skills.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Software.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Client.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Category.toLowerCase().includes(commaseparatedSearch[splitnum]) ||
+					dataOG[i].Permahash.toLowerCase().includes(commaseparatedSearch[splitnum])
 				) {
-					data.push(dataOG[i]);
+					data.push(dataOG[i]); break; //Breaks to avoid repeating the same data for dual-searches.
 				}
+			}
 		}
 	}
 	else {
@@ -151,8 +155,13 @@ function loadfromhash() { //Performs actions based around the number of the hash
 		document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + (data[currentrow].Date);
 		document.getElementById("desc").innerHTML = (data[currentrow].Info);
 		document.getElementById("diff").innerHTML = (data[currentrow].Difficulties);
-		document.getElementById("skills").innerHTML = "<b>Skills:</b> " + (data[currentrow].Skills);
-		document.getElementById("software").innerHTML = "<b>Software:</b> " + (data[currentrow].Software);
+		//Separate skills and softwares into sub-arrays:
+		let splitskills = data[currentrow].Skills.split(", ");
+		let splitsoftware = data[currentrow].Software.split(", ");
+		makesearchlinks(splitskills); makesearchlinks(splitsoftware);
+		//Get skills and software from that function, resume other population:
+		document.getElementById("skills").innerHTML = "<b>Skills:</b> " + (splitskills);
+		document.getElementById("software").innerHTML = "<b>Software:</b> " + (splitsoftware);
 		document.getElementById("client").innerHTML = (data[currentrow].Client);
 		document.getElementById("category").innerHTML = (data[currentrow].Category).replace(/-/g, " ").replace(/\+/g, " & ");
 		
@@ -201,9 +210,24 @@ function loadfromhash() { //Performs actions based around the number of the hash
 		
 		moveit();
 		hidenavbuttons();
+		
+		//Adds searching functionality to the skills and software tags:
+		function makesearchlinks(skillsORsoftware) {
+			for (let s = 0; s < skillsORsoftware.length; s++) {
+				currentS = " <a href='#?" + skillsORsoftware[s] + "' onclick='SSsearch(this.innerHTML)'>" + skillsORsoftware[s]/*.replace(/_/g, ' ')*/ + "</a>";
+				skillsORsoftware[s] = currentS;
+			}
+		}
 	}
 	
 	cachedsearch = searchstring;
+}
+
+//Function for searching Skills & Software. Maneuvers around _ characters.
+function SSsearch(thesearch){
+	filters[2].children[0].value = thesearch/*.replace(/ /g, '_')*/;
+	filter(filters[2].children[0]);
+	closeit();
 }
 
 document.addEventListener('keydown', function(event) {

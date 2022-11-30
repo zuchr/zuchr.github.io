@@ -342,7 +342,7 @@ button { /* Overriding default button styles */
 	align-items: center;
 }
 
-#topbanner > *, .featuredsection > * { width: 100%; max-width: 777px; }
+#topbanner > *, .featuredsection > * { width: 95%; max-width: 777px; }
 
 #topdesc {
 	border: solid var(--pacific-blue) 5px;
@@ -650,6 +650,48 @@ button { /* Overriding default button styles */
 
 #desc, #diff { height: 114px; }
 #skills { height: 38px; }
+
+#controlbuttons {
+	position: fixed;
+	bottom: 2px;
+	left: 2px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	user-select: none;
+	z-index: 2;
+}
+
+#controlbuttons > button {
+	width: 50px;
+	height: 50px;
+	/*background-size: 70% 70%;
+	background-repeat: no-repeat;
+	background-position: center;*/
+	cursor: pointer;
+	border: solid var(--raisin-black) 5px;
+	border-radius: 10px;
+	background-color: var(--pacific-blue);
+	opacity: 50%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	
+	padding: 0 3px;
+	gap: 5px;
+	overflow: hidden;
+	transition: width 0.2s, border-radius 0s .1s;
+}
+
+#controlbuttons > button:hover, #controlbuttons > button:focus { filter: brightness(1.1); opacity: 100%; width: 150px; border-radius: 20px 50px 50px 20px; }
+
+#controlbuttons > button:active { filter: brightness(0.9); opacity: 100%; }
+
+#controlbuttons img { height: 80%; }
+
+#controlbuttons h2 { font-size: 11pt; text-align: left; min-width: 100px; margin: 0; }
+#controlbuttons > h2 { color: var(--pacific-blue); margin-left: 3px; }
 
 @keyframes shift {
 	0% {right: -100%;}

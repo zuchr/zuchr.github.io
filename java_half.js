@@ -16,7 +16,9 @@ function moveit() {
 	}
 	//Only when on the other pages:
 	else {
-		document.getElementById("corecontent").setAttribute("inert", "");
+		let blanktop = document.getElementById("blanktop"); //For the Expanded page.
+		if (blanktop !== null) { document.getElementById("blanktop").setAttribute("inert", ""); }
+		else { document.getElementById("corecontent").setAttribute("inert", ""); }
 	}
 }
 
@@ -40,7 +42,9 @@ function moveitout() {
 	}
 	//Only when on the other pages:
 	else {
-		document.getElementById("corecontent").removeAttribute("inert");
+		let blanktop = document.getElementById("blanktop"); //For the Expanded page.
+		if (blanktop !== null) { document.getElementById("blanktop").removeAttribute("inert"); }
+		else { document.getElementById("corecontent").removeAttribute("inert"); }
 	}
 }
 
@@ -97,10 +101,12 @@ function galleryclose() {
 	closeX2.style.display = "none";
 	
 	//Only when NOT on the main gallery:
-	let filtersdiv = document.getElementById('filters');
-	if (filtersdiv == null) {
-		document.getElementById("corecontent").removeAttribute("inert");
-	}
+	//let filtersdiv = document.getElementById('filters');
+	//if (filtersdiv == null) {
+	let blanktop = document.getElementById("blanktop"); //For the Expanded page.
+	if (blanktop !== null) { document.getElementById("blanktop").removeAttribute("inert"); }
+	else { document.getElementById("corecontent").removeAttribute("inert"); }
+	//}
 }
 
 let touchstartX = 0;
