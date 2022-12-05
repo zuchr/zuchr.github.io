@@ -625,6 +625,8 @@ button { /* Overriding default button styles */
 	margin-top: 10px;
 }
 
+#software > a:visited, #skills > a:visited { color: var(--pacific-blue); }
+
 #connection {
 	position: absolute;
 	right: 0px;
