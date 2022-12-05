@@ -87,6 +87,7 @@ function about() { //Hardcoded entry exclusively for the "ABOUT" button.
 	if (filtersdiv !== null) {
 		document.getElementById("leftbutton").setAttribute("class", "closeXhidden");
 		document.getElementById("rightbutton").setAttribute("class", "closeXhidden");
+		document.getElementById("videoframe").style.display = "none";
 	}
 	
 	closeit();
