@@ -189,7 +189,7 @@
 		<button class="filter" id="Featured" onclick="filter(this)">Featured Works</button>
 		<button class="filter" style="margin-right: 21px;" tabindex="-1"> <label for="searchbar" style="display: none;">Search</label>
 			<input type="text" value="" id="searchbar" placeholder="Search for a phrase..." onchange="filter(this)">
-			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)" alt="" title="Search">
+			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)" alt="Search" title="Search">
 			<img src="../info.svg" id="infobutton" tabindex="0" alt="i">
 			<p id="infoP">Use commas to widen your search (as an 'OR' operator).<br>Category tags use different spacing, i.e.: "3D-Modeling+Texturing".</p>
 		</button>
@@ -236,9 +236,9 @@
 			<div id="connection"></div>
 		</div>
 		<div class="section" id="unified"><br>
-			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="desc"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
 			<p id="skills"></p><br>
 		</div>
 	</div>
