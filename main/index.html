@@ -187,8 +187,9 @@
 	<div id="toprow">
 		<button class="filter" id="All" onclick="filter(this)">All Content</button>
 		<button class="filter" id="Featured" onclick="filter(this)">Featured Works</button>
-		<button class="filter" style="margin-right: 21px;" tabindex="-1"> <label for="searchbar" style="display: none;">Search</label>
+		<button class="filter" style="margin-right: 21px;" tabindex="-1">
 			<input type="text" value="" id="searchbar" placeholder="Search for a phrase..." onchange="filter(this)">
+			<label for="searchbar" style="display: none;">Search</label>
 			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)" alt="Search" title="Search">
 			<img src="../info.svg" id="infobutton" tabindex="0" alt="i">
 			<p id="infoP">Use commas to widen your search (as an 'OR' operator).<br>Category tags use different spacing, i.e.: "3D-Modeling+Texturing".</p>
