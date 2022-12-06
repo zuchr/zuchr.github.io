@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>Bobby Zuch! 😎</title>
+<title>Resume - Bobby Zuch!</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
 <link rel="stylesheet" href="../style.css" type="text/css">
@@ -66,6 +66,14 @@ body { background-color: var(--raisin-black); }
 </style>
 </head>
 <body>
+
+<header id="header">
+	<div id="hback"><img alt="" src="../corner_new.svg"></div>
+	<a href=".."><div id="hlogo"><img alt="Bobby Zuch!" src="../logo.png"></div></a>
+	<div id="htext"><a href=".." id="htext1">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
+	</div>
+</header>
+
 <div id="flexcontent">
 	<div id="introtext">
 		<h1>Contact Me</h1>
@@ -74,12 +82,12 @@ body { background-color: var(--raisin-black); }
 	<div id="gallery" style="margin-bottom: 0px;">
 	<span id="outercontactblock">
 		<span class="contactblock">
-		<a href="mailto:bobbyzuch1@gmail.com" target="_blank"><img src="../contact_mail.png"></a>
+		<a href="mailto:bobbyzuch1@gmail.com" target="_blank"><img alt="Mail icon" src="../contact_mail.png"></a>
 		<h1><a href="mailto:bobbyzuch1@gmail.com" target="_blank">bobbyzuch1@gmail.com</a></h1>
 		</span>
 		
 		<span class="contactblock">
-		<a href="https://www.linkedin.com/in/bobbyzuch/" target="_blank"><img src="../contact_linkedin.png"></a>
+		<a href="https://www.linkedin.com/in/bobbyzuch/" target="_blank"><img alt="Linkedin icon" src="../contact_linkedin.png"></a>
 		<h1><a href="https://www.linkedin.com/in/bobbyzuch/" target="_blank">linkedin.com/in/bobbyzuch</a></h1>
 		</span>
 	</span>
@@ -89,7 +97,7 @@ body { background-color: var(--raisin-black); }
 		<h1>My Resume</h1>
 		<span id="outercontactblock">
 		<span class="contactblock">
-			<img src="../contact_pdf.png"><h1><a href="../resume.pdf" target="_blank" download="BobbyZuch_Resume_2022-10-07.pdf">PDF Version Here</a></h1>
+			<img alt="PDF icon" src="../contact_pdf.png"><h1><a href="../resume.pdf" target="_blank" download="BobbyZuch_Resume_2022-10-07.pdf">PDF Version Here</a></h1>
 		</span>
 		</span>
 		<p>PNG version below:</p>
@@ -102,27 +110,14 @@ body { background-color: var(--raisin-black); }
 	</div>
 </div>
 
-<div id="header">
-	<div id="hback"><img src="../corner_new.svg"></div>
-	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
-	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
-	</div>
-</div>
-
-<!-- HEADER & ABOUT PORTION -->
+<!-- ABOUT PORTION -->
 
 <div id="backborder">
-<div id="closeXholder">
-	<div class="closeX" id="closeX" onclick="closeit()" style="display: initial;"><h1>X</h1></div>
-</div>
 <div id="infobox">
 	<div class="half" id="sideB">
 		<div class="sectionlight">
-			<p id="extra">(Click the image to play it in a new window)</p>
-			<div id="imgdisplay"><img id="image">
-				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
-			</div>
-			<p id="date"><img src="../clock.svg"></p>
+			<div id="imgdisplay"><img alt="" id="image"></div>
+			<p id="date"><img alt="" src="../clock.svg"></p>
 			<p id="client"></p>
 		</div>
 	</div>
@@ -133,12 +128,15 @@ body { background-color: var(--raisin-black); }
 			<div id="connection"></div>
 		</div>
 		<div class="section" id="unified"><br>
-			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
-			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="desc"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants" aria-hidden="true"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
 			<p id="skills"></p><br>
 		</div>
 	</div>
+</div>
+<div id="closeXholder">
+	<button class="closeX" id="closeX" onclick="closeit()" style="display: initial;"><h1>X</h1></button>
 </div>
 </div>
 
