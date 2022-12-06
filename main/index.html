@@ -155,12 +155,12 @@
 </head>
 <body onload="loaddata()", onhashchange="loadfromhash()">
 
-<div id="header">
-	<div id="hback"><img src="../corner_new.svg"></div>
-	<a href=".."><div id="hlogo"><img src="../logo.png" onclick="closeit()"></div></a>
-	<div id="htext"><a href=".." id="htext1" onclick="closeit()">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
+<header id="header">
+	<div id="hback"><img alt="" src="../corner_new.svg"></div>
+	<a href=".."><div id="hlogo"><img alt="Bobby Zuch!" src="../logo.png"></div></a>
+	<div id="htext"><a href=".." id="htext1">HOME</a><a href="javascript:;" id="htext2" onclick="about()">ABOUT</a></div>
 	</div>
-</div>
+</header>
 
 <div id="controlbuttons">
 	<h2>Options</h2>
@@ -187,10 +187,10 @@
 	<div id="toprow">
 		<button class="filter" id="All" onclick="filter(this)">All Content</button>
 		<button class="filter" id="Featured" onclick="filter(this)">Featured Works</button>
-		<button class="filter" style="margin-right: 21px;" tabindex="-1">
+		<button class="filter" style="margin-right: 21px;" tabindex="-1"> <label for="searchbar" style="display: none;">Search</label>
 			<input type="text" value="" id="searchbar" placeholder="Search for a phrase..." onchange="filter(this)">
-			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)">
-			<img src="../info.svg" id="infobutton" tabindex="0">
+			<img src="../search.svg" height="16px" style="margin: 1px 2px -1px" onclick="filter(this.previousElementSibling)" alt="" title="Search">
+			<img src="../info.svg" id="infobutton" tabindex="0" alt="i">
 			<p id="infoP">Use commas to widen your search (as an 'OR' operator).<br>Category tags use different spacing, i.e.: "3D-Modeling+Texturing".</p>
 		</button>
 	</div>
@@ -217,7 +217,7 @@
 		<div class="sectionlight">
 			<p id="extra">(Click the image to play it in a new window)</p>
 			<div id="imgdisplay">
-				<img id="image">
+				<img id="image" alt="">
 				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
 				<video autoplay muted loop controls playsinline id="videoframe" style="max-width: 100%">
 					<source type="video/mp4">
@@ -225,7 +225,7 @@
 					<img alt="It seems your browser doesn't support video playback. Here is a gif version instead." title="It seems your browser doesn't support video playback. Here is a gif version instead.">
 				</video>
 			</div>
-			<p id="date"><img src="../clock.svg"></p>
+			<p id="date"><img src="../clock.svg" alt=""></p>
 			<p id="client"></p>
 		</div>
 	</div>
