@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="audio.css" type="text/css">
+<script type="text/javascript" defer="true" src="https://msfpt.github.io/AudioJs/audio.min.js"></script>
+<style>
+
+:root {
+	--emerald-green: #1DCC6D;
+	--pacific-blue: #21ACCC;
+	--raisin-black: #231F20;
+	--davys-gray: #444949;
+	--orange-accent: #F7A51C;
+	--white: #FFFFFF;
+	--accessibility-color: yellow;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	/*font-family: Roboto;*/
+
+@font-face {
+	font-family: HelveticaRB;
+	src: url(./fonts/HelveticaRounded-Bold.ttf);
+}
+
+@font-face {
+	font-family: RobotoCBI;
+	src: url(./fonts/RobotoCondensed-BoldItalic.ttf);
+}
+
+body {
+	overflow: hidden;
+}
+
+/*audio {
+	max-width: 250px;
+}
+
+
+audio::-webkit-media-controls-panel {
+	background-color: darkgreen;
+}
+audio::-webkit-media-controls-mute-button
+audio::-webkit-media-controls-play-button
+audio::-webkit-media-controls-timeline-container { padding: 0px; }
+audio::-webkit-media-controls-current-time-display
+audio::-webkit-media-controls-time-remaining-display
+audio::-webkit-media-controls-timeline { padding: 0px; }
+audio::-webkit-media-controls-volume-slider-container
+audio::-webkit-media-controls-volume-slider
+audio::-webkit-media-controls-enclosure, audio::-webkit-media-controls-seek-back-button, audio::-webkit-media-controls-seek-forward-button, audio::-webkit-media-controls-fullscreen-button, audio::-webkit-media-controls-rewind-button, audio::-webkit-media-controls-return-to-realtime-button, audio::-webkit-media-controls-toggle-closed-captions-button {
+	display: none;
+}
+audio::-webkit-media-controls-menu {
+	display: none;
+}*/
+
+.AudioJs {
+    background: var(--raisin-black) !important;
+	max-width: 250px !important;
+    border-radius: 15px !important;
+    font-family: Roboto, sans-serif !important;
+    margin: 0 !important;
+}
+
+.AudioJs > nav i, .AudioJs span {
+    margin: 0 !important;
+}
+
+.AudioJs > nav input[type=range] {
+	max-width: 100px !important;
+	min-width: 60px !important;
+}
+
+</style>
+
+<body>
+
+<div>
+<audio controls AudioJs>
+  <source src="../audiofiles/RomDateCalem.m4a">
+Your browser doesn't support this audio!
+</audio>
+
+</div>
+
+</body>
+
+<script>
+/*console.log(window.parent.innerWidth);
+var r = document.querySelector('body');
+
+window.onload = function(){
+	funny();
+}
+window.onresize = function(){
+	funny();
+}
+
+function funny() {
+	if (window.parent.innerWidth <= 300) {
+		r.style.setProperty('background-color', 'green');
+	}
+	else if (window.parent.innerWidth > 300) {
+		r.style.setProperty('background-color', 'cyan');
+	}
+}*/
+</script>
+</html>

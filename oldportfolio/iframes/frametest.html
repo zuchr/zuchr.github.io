@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+
+body {
+	background-color: blue;
+	overflow: hidden;
+}
+
+</style>
+
+<body>
+
+<div> <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et mauris ut erat condimentum suscipit et eu tellus. Curabitur fermentum eros in porta imperdiet. Pellentesque egestas, purus non porttitor efficitur, ipsum orci mollis est, sed suscipit ipsum arcu ultrices purus. Integer egestas luctus elit vulputate ultricies. Nullam sit amet nisi eu quam molestie vulputate ut a magna. Vestibulum euismod nulla eu odio sagittis, ac tempor lectus malesuada. Curabitur erat neque, volutpat quis bibendum eu, faucibus nec mi. Nam vel porttitor ex. Proin finibus nulla at cursus posuere. Ut quis facilisis risus. Praesent vitae rutrum lectus, sed dapibus enim. Nam lacinia nisl erat, at mollis ex pharetra ut. Duis condimentum est at molestie tempus. In vitae aliquet libero.
+
+Cras pretium, ipsum eget gravida sollicitudin, dui magna malesuada est, vel feugiat turpis orci vel odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin hendrerit maximus urna tempus aliquam. Integer volutpat, erat vitae sodales molestie, lectus velit imperdiet erat, eget consectetur metus velit molestie ligula. Sed vel nisl ut metus sollicitudin faucibus. Pellentesque vitae diam ultrices, maximus est at, viverra neque. Donec a dapibus sem. Phasellus commodo lectus id volutpat rutrum. Sed eu nunc bibendum nibh pulvinar rhoncus quis non elit.
+
+Aenean non augue ac arcu tincidunt bibendum sit amet ut erat. Aliquam semper fermentum quam, non mollis neque luctus id. Sed facilisis vel lorem in pharetra. Ut suscipit sem sit amet nulla tincidunt aliquet. Curabitur vel cursus libero. Mauris porttitor metus at mattis pretium. Donec id tempus erat. Sed ornare, sapien quis mattis eleifend, nulla leo porta enim, vitae maximus velit quam et eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nec nibh ac lacus sagittis ullamcorper. Sed diam dui, fermentum condimentum tincidunt sit amet, pellentesque vitae nulla. Donec congue justo tortor, vehicula semper sem auctor quis. Proin pharetra interdum dolor. In condimentum nunc pulvinar egestas posuere.
+
+Cras tincidunt urna sed dolor semper, vitae sodales nisl egestas. Nulla tellus velit, tristique laoreet massa id, tincidunt tempus orci. Integer purus risus, sollicitudin nec augue a, facilisis tempus nisl. Phasellus placerat velit consequat tortor vulputate elementum. Sed in eros a elit elementum tempor ac id enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras a augue vitae tortor placerat tincidunt eget ut ligula.
+
+Morbi consectetur libero metus, vitae cursus ligula fringilla non. Ut varius eget sem ut viverra. Cras at ligula efficitur, molestie leo in, posuere turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut blandit nunc. Pellentesque ante enim, ullamcorper ac rhoncus ac, convallis quis enim. Etiam ipsum quam, tincidunt elementum venenatis in, cursus in mauris. Sed posuere ut tellus pulvinar maximus. Praesent convallis, turpis sed convallis scelerisque, nulla dui pharetra tortor, sed faucibus massa urna sollicitudin arcu. Ut fermentum quam sit amet eleifend auctor. Pellentesque nibh nunc, venenatis id urna vitae, pharetra maximus nunc. Cras velit ipsum, ornare in est ut, accumsan vehicula mi. Proin quis egestas massa. Maecenas vulputate turpis nunc, nec porttitor ipsum tincidunt quis.</h2> </div>
+
+</body>
+
+<script>
+console.log(window.parent.innerWidth);
+var r = document.querySelector('body');
+
+window.onload = function(){
+	funny();
+}
+window.onresize = function(){
+	funny();
+}
+
+function funny() {
+	if (window.parent.innerWidth <= 300) {
+		r.style.setProperty('background-color', 'green');
+	}
+	else if (window.parent.innerWidth > 300) {
+		r.style.setProperty('background-color', 'cyan');
+	}
+}
+</script>
+</html>

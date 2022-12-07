@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bobby Zuch! 😎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="universal.css" type="text/css">
+<script src="main.js"></script>
+<script src="java_half.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/science@1.9.3/science.v1.min.js"></script>
+<style>
+	
+	#galleryprojects {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: auto;
+		margin-top: 20px;
+		max-width: 1230px;
+		width: 100%;
+		z-index: 1;
+	}
+	
+	.bigbox {
+		background-color: var(--raisin-black);
+		width: 263px;
+		height: 332px;
+		color: var(--white);
+		font-family: Roboto;
+		border-radius: 25px 25px 25px 5px;
+		box-shadow: 0px 7px 7px 4px var(--raisin-black);
+		transition: box-shadow .25s, transform .25s;
+		margin: 10px 5px;
+		transform-origin: center;
+	}
+	
+	.bigbox:hover {
+		box-shadow: 0px 0px 0px 5px var(--emerald-green);
+		transform: scale(1.05);
+		cursor: pointer;	
+		z-index: 1;
+	}
+	
+	.singlerow {
+		font-size: 19pt;
+		text-align: center;
+		height: 38px; /*60px total with padding*/
+		margin: 0px;
+		padding: 8px 0px 0px;
+	}
+	
+	.doublerow {
+		font-size: 14pt;
+		text-align: center;
+		line-height: 14pt;
+		height: 40px; /*60px total with padding*/
+		margin: 0px;
+		padding: 5px 0px 2px;
+	}
+	
+	.tagsection {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-evenly;
+		height: 37px;
+	}
+	
+	.tag {
+		min-width: 24%;
+		text-align: center;
+		background-color: var(--orange-accent);
+		border-radius: 8px;
+		padding: 0px 2%;
+		color: darkred; /*Refine this*/
+		font-size: 9pt;
+	}
+	
+	.imgdisplayprojects {
+		margin-top: 5px;
+		width: 100%;
+		height: 188px;
+		background-color: var(--raisin-black);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		background-position: center;
+		background-size: cover; /*Contain if cringe*/
+		background-repeat: no-repeat;
+	}
+	
+	.bottompart {
+		margin: 0px 7px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+	
+	.quickbio {
+		margin: -7.5px 0px;
+		width: 211px;
+		height: 38px;
+	}
+	
+	.quickbio > p { font-size: 9pt; }
+	
+	.time {
+		margin-top: 7px;
+		background-color: var(--white);
+		width: 38px;
+		height: 38px;
+		border-radius: 50px;
+		display: flex;	
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	h4, h5 {
+		color: var(--davys-gray);
+		text-align: center;
+		margin: -0.5px;
+		font-family: sans-serif;
+		font-size: 10.5pt;
+	}
+	
+	h5 { margin-top: -6px; font-size: 8pt; }
+	
+	@media (max-width: 563px) {
+		a { transform: scale(0.75); margin: -60px -37px -25px; }
+		p > a { margin: unset; }
+	}
+	
+	#blanktop {
+		display: flex;
+		justify-content: flex-end;
+		background-color: var(--davys-gray);
+		width: 100%;
+		height: fit-content;
+		box-shadow: 0px 10px 10px var(--raisin-black);
+		flex-direction: column;
+		align-items: center;
+		padding-top: calc(var(--top-margin) - 50px);
+	}
+	
+</style>
+</head>
+<body onload="loaddata()", onhashchange="loadfromhash()">
+<div id="blanktop">
+<div class="featuredsection"><br>
+<h1>Welcome!</h1><br>
+<p>Thank you for visiting! My more detailed projects can be found here, with a smorgasbord of content displayed below.</p>
+</div>
+
+<div id="galleryprojects">
+	
+	<a href="./fnvhh"><div class="bigbox">
+		<h1 class="doublerow">
+		Friday Night Voltex:<br>
+		Heavenly Haven</h1>
+		<div class="tagsection">
+			<span class="tag">Animation</span>
+			<span class="tag">Style Matching</span>
+			<span class="tag">Logo Design</span>
+			<span class="tag">User Interface</span>
+			<span class="tag">Adapting Existing Designs</span>
+		</div>
+		<div class="imgdisplayprojects"
+			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/930620305385324594/unknown.png);">
+		</div>
+		<div class="bottompart">
+			<div class="quickbio">
+				<p>A mod for a rhythm game where I draw new characters, icons, & backgrounds! Still drawing & animating new content.</p>
+			</div>
+			<div class="time">
+				<h5>Apr.</h5>
+				<h4>2022</h4>
+			</div>
+		</div>
+	</div></a>
+	
+	<a href="./factimes/"><div class="bigbox">
+		<h1 class="singlerow">The Factory Times</h1>
+		<div class="tagsection">
+			<span class="tag">Article Design</span>
+			<span class="tag">New Foray</span>
+			<span class="tag">Logo Design</span>
+			<span class="tag">Style Matching</span>
+			<span class="tag">Designing for Print</span>
+		</div>
+		<div class="imgdisplayprojects"
+			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/971110668751212574/unknown.png);">
+		</div>
+		<div class="bottompart">
+			<div class="quickbio">
+				<p>A collection of the articles I designed for my college magazine. I did my best to create a lot of visual variety for each.</p>
+			</div>
+			<div class="time">
+				<h5>Apr.</h5>
+				<h4>2022</h4>
+			</div>
+		</div>
+	</div></a>
+	
+	<a href="./time/"><div class="bigbox">
+		<h1 class="doublerow">
+		Faces in TIME Magazine<br>
+		Website Creation</h1>
+		<div class="tagsection">
+			<span class="tag">Web Design</span>
+			<span class="tag">Interactive Art</span>
+			<span class="tag">New Foray</span>
+			<span class="tag">Client Interaction</span>
+			<span class="tag">Designing for Mobile</span>
+		</div>
+		<div class="imgdisplayprojects"
+			 style="background-image: url(https://cdn.discordapp.com/attachments/901206407695728660/971177314681503785/unknown.png);">
+		</div>
+		<div class="bottompart">
+			<div class="quickbio">
+				<p>A Graduate Assistantship project that kicked off my deeper learning of CSS, HTML & JS coding! Under construction.</p>
+			</div>
+			<div class="time">
+				<h5>May</h5>
+				<h4>2022</h4>
+			</div>
+		</div>
+	</div></a>
+</div>
+<p>vvv Main Content vvv</p>
+</div>
+
+<!-- HEADER & ABOUT PORTION -->
+
+<div id="backborder">
+<div id="closeXholder">
+	<!--div class="closeX" id="leftbutton" onclick="nextprev(0)"><h1><</h1></div>
+	<div class="closeX" id="rightbutton" onclick="nextprev(1)"><h1>></h1></div-->
+	<!--Functionality disabled. Arrows were added at the start of the redevelopment project.-->
+	<div class="closeX" id="closeX" onclick="closeit()" style="display: initial;"><h1>X</h1></div>
+</div>
+<div id="infobox">
+	<div class="half" id="sideB">
+		<div class="sectionlight">
+			<div id="imgdisplay"><img id="image">
+				<div id="iframeouter"><iframe id="iframeA"></iframe><h1 id="getridofme2">Loading...</h1></div>
+			</div>
+			<p id="date"><img src="../clock.svg"></p>
+			<p id="client"></p>
+		</div>
+	</div>
+	<div class="half" id="sideA">
+		<div class="section">
+			<p id="title"></p>
+			<h2>Bobby Zuch!</h2>
+			<div id="connection"></div>
+		</div>
+		<div class="section" id="unified"><br>
+			<p id="desc"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="diff"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="software"></p><div class="slants"><p>////////////////////////////////////////////////////////////////////////////////////</p></div>
+			<p id="skills"></p><br>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="flexbg">
+	<div id="leftwall"></div>
+	<div id="middle"></div>
+	<div id="rightwall"></div>
+</div>
+<div id="flexcontent">
+	<div id="leftwall"></div>
+	<div id="gallery">
+		<h1 id="getridofme">Loading page content...</h1>
+		<noscript><h1 style="text-align: center">This page needs Javascript<br>enabled to function properly.</h1></noscript>
+	</div>
+	<div id="rightwall"></div>
+</div>
+
+
+<div id="header">
+	<div id="hback"><img src="./corner_new.svg"></div>
+	<a href=""><div id="hlogo"><img src="./logo.png" onclick="closeit()"></div></a>
+	<div id="htext"><a href="#top"><h2 id="htext1" onclick="closeit()">HOME</h2></a><h2 id="htext2" onclick="about()">ABOUT</h2></div>
+	</div>
+</div>
+	
+</body>
+
+<script>
+
+var frame = document.getElementById("iframeA");
+
+frame.addEventListener('DOMContentLoaded', (event) => {
+	letsresize();
+});
+frame.onload = function() { letsresize(); document.getElementById("getridofme2").style.display = "none"; }
+frame.onresize = function() { letsresize(); }
+
+function letsresize() {
+  frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+}
+
+</script>
+
+</html>

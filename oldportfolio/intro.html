@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ayo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="universal.css" type="text/css">
+<style>
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--raisin-black);
+}
+
+h1 {
+	font-family: Roboto;
+	font-weight: bold;
+	transition: text-shadow .05s;
+}
+
+#menuwrapper {
+	border-radius: 25px;
+	overflow: hidden;
+	width: 900px;
+	height: 515px;
+	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+/* I know I have the ID and class roles reversed here,
+but some child animation stuff wouldn't work otherwise. */
+#container {
+	position: relative;
+	overflow: hidden;
+	transition: filter .15s;
+	flex-grow: 1;
+}
+.choice1 { width: 600px; height: 300px; perspective: 1000px; perspective-origin: right; }
+.choice2 { width: 600px; height: 200px; }
+.choice3, .choice4, .choice5 { width: 290px; height: 150px; }
+.choice3 > .bgcolor, .choice4 > .bgcolor, .choice5 > .bgcolor { filter: brightness(.75) contrast(.9); }
+
+#bg1 {
+	animation: galleryscroll 1s linear paused infinite;
+    height: 150%;
+    transform-origin: 0% 0%;
+	margin-left: 8%;
+}
+
+#bg2 {
+	animation: detailedscroll 5s linear paused infinite;
+    transform-origin: top;
+}
+
+.bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.bgcolor { filter: brightness(.75) contrast(1.25); transition: filter .25s; }
+
+.textlabel, .flexedbagel {
+	margin: auto;
+	color: white;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-shadow: 0 0 5px black;
+	transition: text-shadow 0.15s;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+	
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.textlabel { opacity: 0.5; }
+
+.textlabel > *, .flexedbagel > * {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.icon { width: 30%; max-height: 50%; filter: drop-shadow(0 0 5px black); transition: filter .03s; }
+
+#container:hover * { animation-play-state: running; }
+#container:hover .bgcolor { filter: brightness(1) contrast(0.9); }
+
+#container:hover h1, #container:hover .icon { transform: translate(-2px, -2px); }
+#container:hover .textlabel > h1 {
+	text-shadow:
+		-2px -2px 0 #000,
+		-1px 1px 0 #000,
+		-2px 2px 0 #000,
+		-1px 3px 0 #000,
+		0px 4px 0 #000,
+		1px 5px 0 #000,
+		
+		2px -2px 0 #000,
+		1px -1px 0 #000,
+		2px 0px 0 #000,
+		3px 1px 0 #000,
+		4px 2px 0 #000,
+		
+		1px 1px 0 #000,
+		2px 2px 0 #000,
+		3px 3px 0 #000,
+		4px 4px 0 #000,
+		5px 5px 0 #000,
+		
+		3px -1px 0 #000,
+		4px 0px 0 #000,
+		5px 1px 0 #000,
+		5px 2px 0 #000,
+		5px 3px 0 #000,
+		5px 4px 0 #000
+		;
+}
+#container:hover > .textlabel > .icon {
+	filter:
+		drop-shadow(-1px -1px 0 #000)
+		drop-shadow(-1px 1px 0 #000)
+		drop-shadow(-1px 3px 0 #000)
+		drop-shadow(3px 1px 0 #000)
+		drop-shadow(5px 2px 0 #000)
+		;
+}
+
+#container:active h1, #container:active .icon { transform: none; }
+#container:active .textlabel > h1 { text-shadow: 2px 2px 0 #000; }
+#container:active > .textlabel > .icon { filter: drop-shadow(2px 2px 0 #000); }
+
+/* ANIMATIONS */
+
+@keyframes galleryscroll {
+	from { transform: rotateX(42deg) translateY(-2.25%); }
+	to { transform: rotateX(42deg) translateY(-17.75%); }
+}
+
+@keyframes detailedscroll {
+	from { transform: translateY(0%); }
+	to { transform: translateY(-68%); }
+}
+
+@media (max-width: 400px) {
+	#menuwrapper {
+		width: unset;
+		height: unset;
+		flex-direction: unset;
+	}
+}
+
+</style>
+</head>
+<body>
+
+<div id="menuwrapper">
+	<div id="container" class="choice1">
+		<div class="flexedbagel bgcolor" style="background-color: var(--emerald-green)"></div>
+		<img id="bg1" class="bg" src="./homesvg/gallerysides.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_gallery.svg">
+			<h1>Main Gallery</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_gallery.svg">
+			<h1>Main Gallery</h1></a>
+	</div>
+
+	<div id="container" class="choice2">
+	<div class="flexedbagel bgcolor" style="background-color: var(--pacific-blue)"></div>
+		<img id="bg2" class="bg" src="./homesvg/detailed_page.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_detailed.svg">
+			<h1>Larger Projects</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_detailed.svg">
+			<h1>Larger Projects</h1></a>
+	</div>
+
+	<div id="container" class="choice3">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<img id="bg2" class="bg" src="./homesvg/.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>This Menu is</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>This Menu is</h1></a>
+	</div>
+
+	<div id="container" class="choice4">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<img id="bg2" class="bg" src="./homesvg/.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>Gonna Make</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>Gonna Make</h1></a>
+	</div>
+
+	<div id="container" class="choice5">
+	<div class="flexedbagel bgcolor" style="background-color: var(--davys-gray)"></div>
+		<img id="bg2" class="bg" src="./homesvg/.svg">
+		
+		<div class="textlabel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>Their Knees Weak</h1>
+		</div>
+		
+		<a href="" class="flexedbagel">
+			<img class="icon" src="./homesvg/icon_.svg">
+			<h1>Their Knees Weak</h1></a>
+	</div>
+	
+</div>
+
+</body>
+<script>
+
+</script>
+</html>
