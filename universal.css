@@ -825,6 +825,7 @@ button { /* Overriding default button styles */
 	#closeX2 > h1 { transform: skewX(25deg); }
 	#imgdisplay > img { max-height: 90vmin; }
 	#unified p { font-size: 10pt; }
+}
 
 @media (max-width: 475px) {
 	#corecontent {
