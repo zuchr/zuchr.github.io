@@ -360,6 +360,7 @@ button { /* Overriding default button styles */
 	align-items: center;
 	
 	width: 100%;
+	overflow-x: hidden;
 }
 
 .featuredsection > * {
@@ -817,7 +818,7 @@ button { /* Overriding default button styles */
 @media (max-width: 500px) {
 	#title { font-size: 16pt; }
 	.featuredsection > h1 { font-size: 21pt; }
-	.featuredsection > p { font-size: 7.5pt; }
+	/*.featuredsection > p { font-size: 7.5pt; }*/
 	/*#topdesc { font-size: 11pt; }*/
 	#header { transform: scale(0.6); }
 	:root { --top-margin: calc(135px - 5vw); }
