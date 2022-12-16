@@ -28,6 +28,10 @@
 	transition-duration: 0s !important;
 	transition-delay: 0s !important;
 }
+
+@media (max-width: 500px) {
+	.featuredsection > p { font-size: 8.35pt; padding: 10px 15px; }
+}
 </style>
 <body>
 	
@@ -41,6 +45,10 @@
 <div id="controlbuttons">
 	<h2>Options</h2>
 	
+	<button id="optionbtn3" onclick="changesetting(3)" title="Big cards on small screens (Not available on wide displays!)" disabled="" style="background-color: var(--davys-gray);">
+		<img src="../homesvg/settings_bigbox.svg" alt="Big cards icon">
+		<h2>Big cards on small screens</h2>
+	</button>
 	<button id="optionbtn2" onclick="changesetting(2)" title="Toggle reduced motion">
 		<img src="../homesvg/settings_reducedmotion2.svg" alt="Reduced motion icon">
 		<h2>Toggle reduced motion</h2>
@@ -52,7 +60,7 @@
 <div id="blanktop" style="box-shadow: unset">
 <div class="featuredsection lessfancy"><br>
 <h1>Expanded Projects</h1>
-<p>My more detailed projects can be found here.</p>
+<p>My more detailed projects are listed here.</p>
 </div>
 
 <div class="galleryprojects" id="bg"></div>
@@ -174,4 +182,23 @@
 </div>
 
 </body>
+<script>
+
+//Alters button based on screen width.
+function watchforresize(x) {
+	if (x.matches) { // If media query matches
+		document.getElementById("optionbtn3").removeAttribute("disabled");
+		document.getElementById("optionbtn3").removeAttribute("style");
+	}
+	else {
+		document.getElementById("optionbtn3").setAttribute("disabled", "");
+		document.getElementById("optionbtn3").setAttribute("style", "background-color: var(--davys-gray);");
+	}
+}
+
+var x = window.matchMedia("(max-width: 563px)");
+watchforresize(x); // Call listener function at run time
+x.addListener(watchforresize); // Attach listener function on state changes
+
+</script>
 </html>

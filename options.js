@@ -39,6 +39,21 @@ function changesetting(value) {
 		}
 	}
 	
+	//Option 3 - Keep big expanded cards.
+	//Adds style to element.
+	else if (value == 3) { //Makes the cards stay big:
+		let cards = document.getElementsByClassName("bigbox");
+		for (let i = 0; i < cards.length; i++) {
+			cards[i].parentElement.classList.add("staybig");
+		}
+	}
+	else if (value == -3) { //Reverts the cards' styling:
+		let cards = document.getElementsByClassName("bigbox");
+		for (let i = 0; i < cards.length; i++) {
+			cards[i].parentElement.classList.remove("staybig");
+		}
+	}
+	
 	
 	//Positive/negative dependant changes:
 	if (value > 0) {
