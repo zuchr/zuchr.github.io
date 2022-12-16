@@ -800,7 +800,7 @@ button { /* Overriding default button styles */
 	#unified { margin-top: 10px; }
 	.slants:nth-of-type(3) { display: none; }
 	
-	#gallery > img { height: 100px; padding: 5px; }
+	#gallery > a > img { height: 100px; padding: 5px; border-radius: 15px; }
 }
 
 @media (max-width: 649px) {
