@@ -679,7 +679,7 @@ button { /* Overriding default button styles */
 }
 
 #software > a:visited, #skills > a:visited, #extra > a:visited { color: var(--pacific-blue); }
-#software > a:hover, #skills > a:hover, #software > a:focus, #skills > a:focus { color: var(--white); }
+#software > a:hover, #skills > a:hover, #extra > a:hover, #software > a:focus, #skills > a:focus, #extra > a:focus { color: var(--white); }
 
 #connection {
 	position: absolute;
