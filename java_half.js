@@ -60,7 +60,7 @@ function closeit() {
 
 function about() { //Hardcoded entry exclusively for the "ABOUT" button.
 	let infoboximage = document.getElementById("image");
-	infoboximage.src = "https://cdn.discordapp.com/attachments/901206407695728660/1055945988289871943/Bobby_Picture.png";
+	infoboximage.src = "https://cdn.discordapp.com/attachments/901206407695728660/1055946612825919539/Bobby_Picture.png";
 	document.getElementById("title").innerHTML = "Hello & Welcome!";
 	document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + "Site launched September 26th, 2022";
 	document.getElementById("desc").innerHTML = "Welcome to my portfolio website! It's great to have you here. Included on this page is a sampling of some of my proudest and most recent works.<br><br>If you're an interested employer (or if you know a guy), <a href='../resume.pdf' target='_blank'>here is the latest version of my resume</a>.";
