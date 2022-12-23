@@ -678,7 +678,7 @@ button { /* Overriding default button styles */
 	margin-top: 10px;
 }
 
-#software > a:visited, #skills > a:visited { color: var(--pacific-blue); }
+#software > a:visited, #skills > a:visited, #extra > a:visited { color: var(--pacific-blue); }
 #software > a:hover, #skills > a:hover, #software > a:focus, #skills > a:focus { color: var(--white); }
 
 #connection {

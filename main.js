@@ -205,7 +205,7 @@ function loadfromhash() { //Performs actions based around the number of the hash
 			infoboximage.style.cursor = "pointer";
 			infoboximage.parentElement.setAttribute("class", "extraroom");
 			document.getElementById("extra").style.display = "block";
-			document.getElementById("extra").innerHTML = "(Click the image <a href='" + data[currentrow].Type + "' target='_blank'>or this text</a> to play it in a new window)";
+			document.getElementById("extra").innerHTML = "(Click the image <a href='" + data[currentrow].Type + "' target='_blank'>or this text</a> to interact with it!)";
 		}
 		
 		moveit();
