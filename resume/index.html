@@ -35,10 +35,6 @@
 	align-items: center;
 }
 
-.contactblock a {
-	display: contents;
-}
-
 .contactblock img {
 	margin-right: 10px;
 	object-fit: contain;
@@ -59,9 +55,9 @@ h1 { margin: 0; font-size: 24pt; }
 
 body { background-color: var(--raisin-black); }
 
-@media (max-width: 800px) {
-	#flexcontent { zoom: 0.66; }
-	#introtext { margin-top: 100px; }
+@media (max-width: 740px) {
+	/*#flexcontent { zoom: 0.66; }*/
+	#introtext { margin-top: calc(170px - 13vw); }
 }
 </style>
 </head>
@@ -74,6 +70,7 @@ body { background-color: var(--raisin-black); }
 	</div>
 </header>
 
+<div id="corecontent">
 <div id="flexcontent">
 	<div id="introtext">
 		<h1>Contact Me</h1>
@@ -97,17 +94,19 @@ body { background-color: var(--raisin-black); }
 		<h1>My Resume</h1>
 		<span id="outercontactblock">
 		<span class="contactblock">
-			<img alt="PDF icon" src="../contact_pdf.png"><h1><a href="../resume.pdf" target="_blank" download="BobbyZuch_Resume_2022-10-07.pdf">PDF Version Here</a></h1>
+			<a href="../resume.pdf" target="_blank" download="BobbyZuch_Resume_2022-12-23.pdf"><img alt="PDF icon" src="../contact_pdf.png"></a>
+			<h1><a href="../resume.pdf" target="_blank" download="BobbyZuch_Resume_2022-12-23.pdf">PDF Version Here</a></h1>
 		</span>
 		</span>
 		<p>PNG version below:</p>
 	</div>
 	<div id="gallery" style="width: unset; max-width: 90%;">
 		<div style="display: flex; justify-content: center; width: 100%;">
-			<img src="../resume.png" width="100%" style="max-width: 1879px;" alt="BobbyZuch_Resume_2022-10-07.png">
+			<img src="../resume.png" width="100%" style="max-width: 1879px;" alt="BobbyZuch_Resume_2022-12-23.png">
 			<!--iframe src="../BobbyZuch_Resume_22-8-23.pdf" width="100%" height="1055px" style="max-width: 95%"></iframe-->
 		</div>
 	</div>
+</div>
 </div>
 
 <!-- ABOUT PORTION -->
