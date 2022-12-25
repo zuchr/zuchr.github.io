@@ -360,6 +360,7 @@ button { /* Overriding default button styles */
 	align-items: center;
 	
 	width: 100%;
+	overflow-x: hidden;
 }
 
 .featuredsection > * {
@@ -382,7 +383,6 @@ button { /* Overriding default button styles */
 	margin-top: 20px;
 	
 	box-shadow: 0px 3px 4px var(--raisin-black);
-	overflow-x: hidden;
 }
 
 .featuredsection > h1:after, .featuredsection > h1:before {
