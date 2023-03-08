@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link rel="preload" as="image" href="./cafe.png">
+<link rel="preload" as="image" href="./cafe_dark.png">
+<link rel="preload" as="image" href="./cafe_BG.png">
+<link rel="preload" as="image" href="./cafe_BG_dark.png">
+<style>
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	gap: 10px;
+}
+
+video {
+	width: 100%;
+	aspect-ratio: 16/9;
+}
+
+#buttons {
+	background-color: lightgreen;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+a {
+	background-color: #21ACCC;
+	border: 3px solid black;
+	border-radius: 5px;
+	display: inline-block;
+	height: 44px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	transition: background-color .125s;
+}
+
+a > img {
+	height: inherit;
+}
+
+a:hover, a:focus {
+	background-color: #1c8da7;
+}
+
+a:active {
+	background-color: #1DCC6D;
+}
+
+</style>
+</head>
+<body>
+	<video autoplay muted loop controls poster="./cafe.png" id="cafe">
+		<source src="./videos/cafe.mp4" type="video/mp4">
+		<source src="./cafe.png">
+	</video>
+	
+	<div id="buttons">
+		<a href="javascript:;" onclick="swapcam()"><img src="./icon_cameraswap.png" alt="Camera Swap Icon"></a>
+		<a href="javascript:;" onclick="swaplight()"><img src="./icon_sunmoon.png" alt="Sun and Moon Icon"></a>
+	</div>
+	
+</body>
+<script>
+let light = "";
+let cam = "";
+let video = document.getElementById("cafe");
+let c = false;
+let l = false;
+
+function swapcam(){
+	if (c == true) {
+		cam = "";
+	}
+	else {
+		cam = "_BG";
+	}
+	
+	c = !c;
+	apply();
+}
+
+function swaplight(){
+	if (l == true) {
+		light = "";
+	}
+	else {
+		light = "_dark";
+	}
+	
+	l = !l;
+	apply();
+}
+
+function apply(){
+	video.children[0].src = "./videos/cafe" + cam + light + ".mp4";
+	video.children[1].src = video.poster = "./cafe" + cam + light + ".png";
+	video.load();
+}
+
+</script>
+</html>
