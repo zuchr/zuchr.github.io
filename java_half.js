@@ -63,7 +63,7 @@ function about() { //Hardcoded entry exclusively for the "ABOUT" button.
 	infoboximage.src = "https://cdn.discordapp.com/attachments/901206407695728660/1055946612825919539/Bobby_Picture.png";
 	document.getElementById("title").innerHTML = "Hello & Welcome!";
 	document.getElementById("date").innerHTML = "<img src='../clock.svg'> " + "Site launched September 26th, 2022";
-	document.getElementById("desc").innerHTML = "Welcome to my portfolio website! It's great to have you here. Included on this page is a sampling of some of my proudest and most recent works.<br><br>If you're an interested employer (or if you know a person), , <a href='../resume.pdf' target='_blank'>here is the latest version of my resume</a>.";
+	document.getElementById("desc").innerHTML = "Welcome to my portfolio website! It's great to have you here. Included on this page is a sampling of some of my proudest and most recent works.<br><br>If you're an interested employer (or if you know a person), <a href='../resume.pdf' target='_blank'>here is the latest version of my resume</a>.";
 	document.getElementById("diff").innerHTML = "If you're looking to get in touch, shoot me an email at <a href='mailto:bobbyzuch1@gmail.com'>bobbyzuch1@gmail.com</a>. I'd love to hear from you!<br><br>I'm very proud to say I wrote this site by myself from the ground-up. That includes all the HTML, CSS, and Javascript. No bootstrap templates here!";
 	document.getElementById("skills").innerHTML = "<b>Skills:</b> " + "I make nice eggs.";
 	document.getElementById("software").innerHTML = "<b>Software:</b> " + "Anything I can get my dirty hands on!";
