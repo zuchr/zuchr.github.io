@@ -438,6 +438,9 @@ button { /* Overriding default button styles */
 	align-items: center;
 	justify-content: center;
 }
+
+#grayback[style="display: flex;"] { z-index: 3; } /* Only effects expanded project pages */
+
 #focus {
 	width: 100%;
 	height: 100%;
